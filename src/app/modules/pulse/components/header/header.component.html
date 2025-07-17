@@ -1,0 +1,86 @@
+
+<div class="flex items-center w-full bg-cyan-100 p-4 x">
+  <div class="flex flex-row justify-end items-center gap-4 w-full">
+    <!-- Sign In Button -->
+    <button mat-button class="flex items-center text-slate-900 text-md">
+      <mat-icon>account_circle</mat-icon>
+      <span class="ml-2">Sign In</span>
+    </button>
+
+    <!-- Support Button -->
+    <button mat-button class="flex items-center  text-slate-900  text-md">
+      <mat-icon>headset</mat-icon>
+      <span class="ml-2  text-slate-900">GET SUPPORT</span>
+    </button>
+
+    <!-- Search Icon -->
+    <button mat-icon-button class=" text-slate-900  text-md">
+      <mat-icon >search</mat-icon>
+    </button>
+  </div>
+</div>
+
+<div class=" shadow-md w-full">
+  <mat-toolbar class="flex justify-between items-center px-4 py-2 max-w-7xl mx-auto bg-white">
+
+    <div class="flex items-center">
+      <img src="images/image 19.png" alt="Logo" class="h-10">
+    </div>
+
+
+    <div class="hidden md:flex items-center space-x-6">
+      
+      <div *ngFor="let item of menuItems" class="relative group">
+        <button mat-button class="flex items-center text-gray-700 hover:text-blue-600">
+          {{item.title}}
+          <mat-icon class="ml-1">keyboard_arrow_down</mat-icon>
+        </button>
+        
+       
+        <div class="absolute z-10 hidden group-hover:block bg-white shadow-lg rounded-md mt-1 py-1 w-48">
+          <a *ngFor="let subItem of item.children" 
+             href="#" 
+             class=" text-md block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
+            {{subItem}}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-1 w-40 bg-teal-600  flex flex-row gap-2 rounded-tr-lg rounded-bl-lg rounded-tl-sm rounded-br-sm cursor-pointer" (click)="click()">
+  <span class="text-md font-semibold ">Book A Meeting</span>
+  <mat-icon class="!text-white ml-auto">arrow_forward</mat-icon>
+  
+</div>
+
+ 
+    <button mat-icon-button class="md:hidden" (click)="toggleMobileMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <!-- Mobile Menu -->
+  <div class="md:hidden bg-white shadow-lg" *ngIf="mobileMenuOpen">
+    <div *ngFor="let item of menuItems" class="border-t border-gray-100">
+      <button mat-button (click)="toggleSubMenu(item)" class="w-full flex justify-between items-center px-4 py-3">
+        {{item.title}}
+        <mat-icon>{{item.expanded ? 'expand_less' : 'expand_more'}}</mat-icon>
+      </button>
+      
+      <div *ngIf="item.expanded" class="bg-gray-50 pl-6">
+        <a *ngFor="let subItem of item.children" 
+           href="#" 
+           class="block px-4 py-2 text-gray-700 hover:bg-blue-50">
+          {{subItem}}
+        </a>
+      </div>
+    </div>
+    
+    
+    <button mat-raised-button color="primary" class="w-full m-4 bg-teal-600  text-white">
+      Book A Meeting
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+  </div>
+</div>
+
