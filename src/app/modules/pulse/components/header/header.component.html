@@ -20,8 +20,8 @@
   </div>
 </div>
 
-<div class=" shadow-md w-full">
-  <mat-toolbar class="flex justify-between items-center px-4 py-2 max-w-7xl mx-auto bg-white">
+<div class=" shadow-md w-full bg-red-50">
+  <mat-toolbar class="flex justify-between items-center px-4 py-2 max-w-7xl mx-auto bg-red-50">
 
     <div class="flex items-center">
       <img src="images/image 19.png" alt="Logo" class="h-10">
@@ -31,9 +31,9 @@
     <div class="hidden md:flex items-center space-x-6">
       
       <div *ngFor="let item of menuItems" class="relative group">
-        <button mat-button class="flex items-center text-gray-700 hover:text-blue-600">
-          {{item.title}}
-          <mat-icon class="ml-1">keyboard_arrow_down</mat-icon>
+        <button mat-button class="flex w-full items-center text-gray-700 hover:text-blue-600">
+          <span>{{ item.title }}</span>
+          <mat-icon class="ml-auto">keyboard_arrow_down</mat-icon>
         </button>
         
        
@@ -62,10 +62,7 @@
   <!-- Mobile Menu -->
   <div class="md:hidden bg-white shadow-lg" *ngIf="mobileMenuOpen">
     <div *ngFor="let item of menuItems" class="border-t border-gray-100">
-      <button mat-button (click)="toggleSubMenu(item)" class="w-full flex justify-between items-center px-4 py-3">
-        {{item.title}}
-        <mat-icon>{{item.expanded ? 'expand_less' : 'expand_more'}}</mat-icon>
-      </button>
+  
       
       <div *ngIf="item.expanded" class="bg-gray-50 pl-6">
         <a *ngFor="let subItem of item.children" 
@@ -73,6 +70,10 @@
            class="block px-4 py-2 text-gray-700 hover:bg-blue-50">
           {{subItem}}
         </a>
+      </div>
+      <div class="flex w-full items-center text-gray-700 hover:text-blue-600">
+        <span>{{ item.title }}</span>
+        <mat-icon class="ml-auto">keyboard_arrow_down</mat-icon>
       </div>
     </div>
     

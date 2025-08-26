@@ -1,3 +1,23 @@
-<div>
-    footer
+<div class="flex flex-col sm:flex-row w-full justify-center items-start p-6 gap-10 ml-2 sm:ml-20 md:ml-20 lg:ml-40">
+    <div *ngFor=" let column of footerColumns" class="flex flex-col flex-1 justify-center items-start text-start">
+        <!-- changed items-center -> items-start -->
+
+        <h3 class="font-bold text-lg mb-4 text-start">{{ column.title }}</h3>
+
+        <ng-container *ngFor="let item of column.items">
+            <!-- Regular link -->
+            <div *ngIf="!item.isButton" class="mb-2 cursor-pointer hover:text-teal-600 transition text-start"
+                (click)="item.action?.()">
+                {{ item.label }}
+            </div>
+
+            <!-- Button -->
+            <div *ngIf="item.isButton" class="p-2 w-fit bg-teal-600 flex flex-row items-center gap-2 
+                  rounded-tr-lg rounded-bl-lg rounded-tl-sm rounded-br-sm 
+                  cursor-pointer hover:bg-teal-700 transition mt-2" (click)="item.action?.()">
+                <span class="text-md font-semibold text-white">{{ item.label }}</span>
+                <mat-icon class="!text-white">arrow_forward</mat-icon>
+            </div>
+        </ng-container>
+    </div>
 </div>
