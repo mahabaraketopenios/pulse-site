@@ -9,6 +9,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { HomeSectionComponent } from './components/home-section/home-section.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
+import { MatCardModule } from '@angular/material/card'; // <-- import here
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
     MatButtonModule,
     MatToolbarModule,
     MatExpansionModule,
+    MatCardModule,
   ],
 })
 export class PulseModule {}
