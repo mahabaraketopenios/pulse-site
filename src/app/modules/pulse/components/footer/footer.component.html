@@ -1,23 +1,34 @@
-<div class="flex flex-col sm:flex-row w-full justify-center items-start p-6 gap-10 ml-2 sm:ml-20 md:ml-20 lg:ml-40">
-    <div *ngFor=" let column of footerColumns" class="flex flex-col flex-1 justify-center items-start text-start">
-        <!-- changed items-center -> items-start -->
+<div class="relative w-full ">
+    <div class="flex flex-col sm:flex-row w-full justify-around items-start p-6 gap-10">
+        <div *ngFor="let column of footerColumns" class="flex flex-col justify-between items-start text-start">
+            <h3 class="font-bold text-lg mb-4 text-start">{{ column.title }}</h3>
 
-        <h3 class="font-bold text-lg mb-4 text-start">{{ column.title }}</h3>
+    <ng-container *ngFor="let item of column.items">
+        <!-- Regular link -->
+        <div *ngIf="!item.isButton" class="mb-2 cursor-pointer hover:text-teal-600 transition text-start"
+            (click)="item.action?.()">
+            {{ item.label }}
+        </div>
 
-        <ng-container *ngFor="let item of column.items">
-            <!-- Regular link -->
-            <div *ngIf="!item.isButton" class="mb-2 cursor-pointer hover:text-teal-600 transition text-start"
-                (click)="item.action?.()">
-                {{ item.label }}
-            </div>
-
-            <!-- Button -->
-            <div *ngIf="item.isButton" class="p-2 w-fit bg-teal-400 flex flex-row items-center gap-2 
-                  rounded-tr-lg rounded-bl-lg rounded-tl-sm rounded-br-sm 
-                  cursor-pointer hover:bg-teal-400 transition mt-2" (click)="item.action?.()">
-                <span class="text-md font-semibold">{{ item.label }}</span>
-                <mat-icon class="!text-black">arrow_forward</mat-icon>
-            </div>
-        </ng-container>
+        <!-- Button -->
+        <div *ngIf="item.isButton"
+            class="p-2 w-fit bg-teal-400 flex flex-row items-center gap-2 rounded-tr-xl rounded-bl-xl rounded cursor-pointer hover:bg-teal-400 transition mt-2"
+            (click)="item.action?.()">
+            <span class="text-md font-semibold">{{ item.label }}</span>
+            <mat-icon class="!text-black">arrow_forward</mat-icon>
+        </div>
+<!-- Motif Images -->
+<div class="flex flex-col h-full mt-2 mb-5" *ngIf="item.motif">
+    <div class="flex flex-row gap-5 mt-2">
+        <img src="images/linked-in.png" class="bg-black w-10 h-10" alt="">
+        <img src="images/facebook-f.png" class="bg-black w-10 h-10" alt="">
+        <img src="images/you-tube-logo.png" class="bg-black w-10 h-10" alt="">
     </div>
+</div>
+    </ng-container>
+    </div>
+</div>
+
+<!-- Bottom-right motif -->
+<img src="images/motif.png" class="absolute bottom-2 right-5  w-20 h-20" alt="">
 </div>

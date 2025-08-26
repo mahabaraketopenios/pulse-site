@@ -3,6 +3,7 @@ interface FooterItem {
   label: string;
   action?: () => void;
   isButton?: boolean;
+  motif?: boolean;
 }
 
 interface FooterColumn {
@@ -78,6 +79,7 @@ export class FooterComponent {
           label: 'Request Demo',
           action: () => this.onClick('Request Demo'),
           isButton: true,
+          motif: true,
         }, // <-- distinct
       ],
     },
