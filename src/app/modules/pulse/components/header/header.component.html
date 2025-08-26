@@ -28,7 +28,7 @@
     </div>
 
 
-    <div class="hidden md:flex items-center space-x-6">
+    <div class="hidden md:flex items-center space-x-6 z-999">
       
       <div *ngFor="let item of menuItems" class="relative group">
         <button class="flex w-full items-center text-gray-700 hover:text-blue-600" (click)="toggleItem(item,menuItems)">
@@ -37,12 +37,26 @@
         </button>
         
        
-        <div class="absolute z-10   bg-white shadow-lg rounded-md mt-1 py-1 w-48" *ngIf="item.expanded">
+        <div class="absolute z-50   bg-white shadow-lg rounded-md mt-1 p-3 w-fit" *ngIf="item.expanded">
+          <div *ngIf="item.title!='What we do'">
           <a *ngFor="let subItem of item.children" 
             (click)="clicked(subItem)"
              class=" text-md block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
             {{subItem}}
-          </a>
+          </a></div>
+          <div *ngIf="item.title=='What we do'" class="flex flex-col gap-8 text-lg">
+            <div *ngFor="let subItem of item.children" class="flex items-center gap-5 cursor-pointer" (click)="clicked(subItem)">
+          
+              <div class="flex items-center justify-center w-10 h-10 bg-teal-300 rounded-full">
+                <mat-icon>add</mat-icon>
+              </div>
+          
+          
+              <span class="px-2 py-1 rounded hover:bg-teal-100">
+                {{subItem}}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

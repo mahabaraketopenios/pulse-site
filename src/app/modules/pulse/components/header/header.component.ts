@@ -11,7 +11,15 @@ export class HeaderComponent {
   menuItems = [
     {
       title: 'What we do',
-      children: ['Services', 'Solutions', 'Industries'],
+      children: [
+        'Assessment and improvment Projects',
+        'Course Evaluation and improvment',
+        'Sychnonus mulitilevel surveys monitoring',
+        'Curriculum evaluation and update strategy',
+        'Faculty perfomance boost',
+        'Accreditation and SSR',
+        'Student learning , success and engagement',
+      ],
       expanded: false,
     },
     {

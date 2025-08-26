@@ -9,7 +9,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { HomeSectionComponent } from './components/home-section/home-section.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
-import { MatCardModule } from '@angular/material/card'; // <-- import here
+import { MatCardModule } from '@angular/material/card';
+import { WhatWeDoComponent } from './components/what-we-do/what-we-do.component'; // <-- import here
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MatCardModule } from '@angular/material/card'; // <-- import here
     HomeComponent,
     HomeSectionComponent,
     FooterComponent,
+    WhatWeDoComponent,
   ],
   imports: [
     CommonModule,
