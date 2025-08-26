@@ -50,29 +50,16 @@ export class HeaderComponent {
        url: 'https://calendly.com/mahabaraket-openios',
      }); */
   }
-  toggleItem(item: any) {
+  toggleItem(item: any, allItems: any[]) {
+    allItems.forEach((i) => {
+      if (i !== item) {
+        i.expanded = false;
+      }
+    });
+
     item.expanded = !item.expanded;
   }
-  /*   private lastScroll = 0;
-
-  @HostBinding('class.visible') isVisible = false;
-
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    const currentScroll =
-      window.pageYOffset || document.documentElement.scrollTop;
-
-    if (currentScroll > 0 && currentScroll > this.lastScroll) {
-      // Scrolling down beyond 100px -> show header
-      this.isVisible = true;
-    } else if (currentScroll < this.lastScroll) {
-      // Scrolling up -> hide header
-      this.isVisible = false;
-    }
-    if (currentScroll === 0 || currentScroll < 100) {
-      // At the top of the page -> show header
-      this.isVisible = false;
-    }
-    this.lastScroll = currentScroll;
-  } */
+  clicked(subItem: string) {
+    console.log('Clicked on:', subItem);
+  }
 }

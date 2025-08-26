@@ -31,15 +31,15 @@
     <div class="hidden md:flex items-center space-x-6">
       
       <div *ngFor="let item of menuItems" class="relative group">
-        <button class="flex w-full items-center text-gray-700 hover:text-blue-600">
+        <button class="flex w-full items-center text-gray-700 hover:text-blue-600" (click)="toggleItem(item,menuItems)">
           <span class="text-lg">{{ item.title }}</span>
           <mat-icon class="ml-auto">keyboard_arrow_down</mat-icon>
         </button>
         
        
-        <div class="absolute z-10 hidden group-hover:block bg-white shadow-lg rounded-md mt-1 py-1 w-48">
+        <div class="absolute z-10   bg-white shadow-lg rounded-md mt-1 py-1 w-48" *ngIf="item.expanded">
           <a *ngFor="let subItem of item.children" 
-             href="#" 
+            (click)="clicked(subItem)"
              class=" text-md block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
             {{subItem}}
           </a>
@@ -63,7 +63,7 @@
   <!-- Mobile Menu -->
   <div class="md:hidden bg-white shadow-lg p-2" *ngIf="mobileMenuOpen">
     <div *ngFor="let item of menuItems" class="border-t border-gray-100">
-  <button class="flex w-full items-center text-gray-700 hover:text-blue-600" (click)="toggleItem(item)">
+  <button class="flex w-full items-center text-gray-700 hover:text-blue-600" (click)="toggleItem(item,menuItems)">
     <span class="text-lg">{{ item.title }}</span>
     <mat-icon class="ml-auto">
       {{ item.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
