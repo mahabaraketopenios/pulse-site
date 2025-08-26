@@ -12,11 +12,11 @@
             </div>
 
             <!-- Button -->
-            <div *ngIf="item.isButton" class="p-2 w-fit bg-teal-600 flex flex-row items-center gap-2 
+            <div *ngIf="item.isButton" class="p-2 w-fit bg-teal-400 flex flex-row items-center gap-2 
                   rounded-tr-lg rounded-bl-lg rounded-tl-sm rounded-br-sm 
-                  cursor-pointer hover:bg-teal-700 transition mt-2" (click)="item.action?.()">
-                <span class="text-md font-semibold text-white">{{ item.label }}</span>
-                <mat-icon class="!text-white">arrow_forward</mat-icon>
+                  cursor-pointer hover:bg-teal-400 transition mt-2" (click)="item.action?.()">
+                <span class="text-md font-semibold">{{ item.label }}</span>
+                <mat-icon class="!text-black">arrow_forward</mat-icon>
             </div>
         </ng-container>
     </div>

@@ -46,6 +46,12 @@ export class HeaderComponent {
 
   click() {
     console.log('meeting');
+    /*  (window as any).Calendly.initPopupWidget({
+       url: 'https://calendly.com/mahabaraket-openios',
+     }); */
+  }
+  toggleItem(item: any) {
+    item.expanded = !item.expanded;
   }
   /*   private lastScroll = 0;
 

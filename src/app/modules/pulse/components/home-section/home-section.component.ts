@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-section-1',
-  templateUrl: './section-1.component.html',
-  styleUrl: './section-1.component.scss',
+  selector: 'app-home-section',
+  templateUrl: './home-section.component.html',
+  styleUrl: './home-section.component.scss',
 })
-export class Section1Component {
+export class HomeSectionComponent {
   faqs: any[] = [
     {
       question: 'D1. Specification Layer',

@@ -6,7 +6,7 @@ import { PulseRoutingModule } from './pulse-routing.module';
 import { MatIconModule } from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { Section1Component } from './components/section-1/section-1.component';
+import { HomeSectionComponent } from './components/home-section/home-section.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
 
@@ -14,7 +14,7 @@ import { MatAccordion, MatExpansionModule } from '@angular/material/expansion';
   declarations: [
     HeaderComponent,
     HomeComponent,
-    Section1Component,
+    HomeSectionComponent,
     FooterComponent,
   ],
   imports: [

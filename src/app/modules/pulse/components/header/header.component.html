@@ -1,14 +1,14 @@
 
-<div class="flex items-center w-full bg-cyan-100 p-4 x">
+<div class="flex items-center w-full  bg-cyan-100 p-4 x">
   <div class="flex flex-row justify-end items-center gap-4 w-full">
     <!-- Sign In Button -->
-    <button mat-button class="flex items-center text-slate-900 text-md">
+    <button mat-button class="flex items-center text-slate-900 text-sm md:text-md">
       <mat-icon>account_circle</mat-icon>
       <span class="ml-2">Sign In</span>
     </button>
 
     <!-- Support Button -->
-    <button mat-button class="flex items-center  text-slate-900  text-md">
+    <button mat-button class="flex items-center  text-slate-900  text-sm md:text-md">
       <mat-icon>headset</mat-icon>
       <span class="ml-2  text-slate-900">GET SUPPORT</span>
     </button>
@@ -31,8 +31,8 @@
     <div class="hidden md:flex items-center space-x-6">
       
       <div *ngFor="let item of menuItems" class="relative group">
-        <button mat-button class="flex w-full items-center text-gray-700 hover:text-blue-600">
-          <span>{{ item.title }}</span>
+        <button class="flex w-full items-center text-gray-700 hover:text-blue-600">
+          <span class="text-lg">{{ item.title }}</span>
           <mat-icon class="ml-auto">keyboard_arrow_down</mat-icon>
         </button>
         
@@ -47,8 +47,9 @@
       </div>
     </div>
 
-    <div class="p-1 w-40 bg-teal-600  flex flex-row gap-2 rounded-tr-lg rounded-bl-lg rounded-tl-sm rounded-br-sm cursor-pointer" (click)="click()">
-  <span class="text-md font-semibold ">Book A Meeting</span>
+    <div class="p-1 w-40 bg-teal-400  flex flex-row gap-2 rounded-tr-xl rounded-bl-xl rounded cursor-pointer"
+      (click)="click()">
+      <span class="text-md font-semibold ml-2 ">Book A Meeting</span>
   <mat-icon class="!text-white ml-auto">arrow_forward</mat-icon>
   
 </div>
@@ -60,28 +61,28 @@
   </mat-toolbar>
 
   <!-- Mobile Menu -->
-  <div class="md:hidden bg-white shadow-lg" *ngIf="mobileMenuOpen">
+  <div class="md:hidden bg-white shadow-lg p-2" *ngIf="mobileMenuOpen">
     <div *ngFor="let item of menuItems" class="border-t border-gray-100">
+  <button class="flex w-full items-center text-gray-700 hover:text-blue-600" (click)="toggleItem(item)">
+    <span class="text-lg">{{ item.title }}</span>
+    <mat-icon class="ml-auto">
+      {{ item.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+    </mat-icon>
+  </button>
   
-      
-      <div *ngIf="item.expanded" class="bg-gray-50 pl-6">
-        <a *ngFor="let subItem of item.children" 
-           href="#" 
-           class="block px-4 py-2 text-gray-700 hover:bg-blue-50">
-          {{subItem}}
-        </a>
-      </div>
-      <div class="flex w-full items-center text-gray-700 hover:text-blue-600">
-        <span>{{ item.title }}</span>
-        <mat-icon class="ml-auto">keyboard_arrow_down</mat-icon>
-      </div>
+  <div *ngIf="item.expanded" class="bg-gray-50 pl-6">
+    <a *ngFor="let subItem of item.children" href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">
+      {{subItem}}
+    </a>
     </div>
+</div>
     
     
-    <button mat-raised-button color="primary" class="w-full m-4 bg-teal-600  text-white">
+    <button mat-raised-button color="primary" class=" m-4 bg-teal-400  text-white">
       Book A Meeting
       <mat-icon>arrow_forward</mat-icon>
     </button>
   </div>
 </div>
 
+<!-- <div id="calendly-inline-widget" style="min-width:320px;height:630px;"></div> -->
