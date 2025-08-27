@@ -40,12 +40,12 @@
         <div class="absolute z-50   bg-white shadow-lg rounded-md mt-1 p-3 w-fit" *ngIf="item.expanded">
           <div *ngIf="item.title!='What we do'">
           <a *ngFor="let subItem of item.children" 
-            (click)="clicked(subItem)"
+            (click)="clicked(subItem.id)"
              class=" text-md block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
-            {{subItem}}
+            {{subItem.label}}
           </a></div>
           <div *ngIf="item.title=='What we do'" class="flex flex-col gap-8 text-lg">
-            <div *ngFor="let subItem of item.children" class="flex items-center gap-5 cursor-pointer" (click)="clicked(subItem)">
+            <div *ngFor="let subItem of item.children" class="flex items-center gap-5 cursor-pointer" (click)="clicked(subItem.id)">
           
               <div class="flex items-center justify-center w-10 h-10 bg-teal-300 rounded-full">
                 <mat-icon>add</mat-icon>
@@ -53,7 +53,7 @@
           
           
               <span class="px-2 py-1 rounded hover:bg-teal-100">
-                {{subItem}}
+                {{subItem.label}}
               </span>
             </div>
           </div>
