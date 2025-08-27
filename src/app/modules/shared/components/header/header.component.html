@@ -37,7 +37,7 @@
         </button>
         
        
-        <div class="absolute z-50 w-fit  bg-white shadow-lg rounded-md mt-1 p-3 " *ngIf="item.expanded">
+        <div class="absolute z-50 w-100  bg-white shadow-lg rounded-md mt-1 p-3 " *ngIf="item.expanded">
           <div *ngIf="item.title!='What we do'">
           <a *ngFor="let subItem of item.children" 
             (click)="clicked(subItem.id)"
