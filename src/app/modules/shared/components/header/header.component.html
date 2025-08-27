@@ -1,4 +1,3 @@
-
 <div class="flex items-center w-full bg-custom-mint-100 p-4 ">
   <div class="flex flex-row justify-end items-center gap-4 w-full">
     <!-- Sign In Button -->
@@ -15,13 +14,13 @@
 
     <!-- Search Icon -->
     <button mat-icon-button class=" text-slate-900  text-md">
-      <mat-icon >search</mat-icon>
+      <mat-icon>search</mat-icon>
     </button>
   </div>
 </div>
 
 <div class=" shadow-md w-full bg-gradient-beige ">
-  <div class="flex justify-between items-center px-4  py-2 max-w-7xl mx-auto ">
+  <div class="flex justify-between items-center px-4  py-2 max-w-7xl mx-auto w-full ">
 
     <div class="flex items-center">
       <img src="images/image 19.png" alt="Logo" class="h-10">
@@ -29,32 +28,52 @@
 
 
     <div class="hidden md:flex items-center space-x-6 z-999">
-      
+
       <div *ngFor="let item of menuItems" class="relative group">
         <button class="flex w-full items-center text-gray-700 hover:text-blue-600" (click)="toggleItem(item,menuItems)">
           <span class="text-lg">{{ item.title }}</span>
           <mat-icon class="ml-auto">keyboard_arrow_down</mat-icon>
         </button>
-        
-       
-        <div class="absolute z-50 w-100  bg-white shadow-lg rounded-md mt-1 p-3 " *ngIf="item.expanded">
+
+
+        <div class="absolute z-50 w-[500px]  bg-white shadow-lg rounded-md mt-1 p-3 " *ngIf="item.expanded">
           <div *ngIf="item.title!='What we do'">
-          <a *ngFor="let subItem of item.children" 
-            (click)="clicked(subItem.id)"
-             class=" text-md block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
-            {{subItem.label}}
-          </a></div>
-          <div *ngIf="item.title=='What we do'" class="flex flex-col gap-8 text-lg w-fit">
-            <div *ngFor="let subItem of item.children" class="flex items-center gap-5 cursor-pointer" (click)="clicked(subItem.id)">
-          
-              <div class="flex items-center justify-center w-10 h-10 bg-teal-300 rounded-full">
-                <mat-icon>add</mat-icon>
+            <a *ngFor="let subItem of getchildren(item)" (click)="clicked(subItem.path)"
+              class=" text-md block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
+              {{ subItem.label }}
+              </a>
               </div>
-          
-          
-              <span class="px-2 py-1 rounded hover:bg-teal-100">
-                {{subItem.label}}
-              </span>
+              
+              <!-- Special Layout for What we do -->
+              <div *ngIf="item.title=='What we do'" class="flex flex-row gap-10 w-full">
+                <!-- Solutions -->
+                <div class="flex flex-col gap-6 text-lg w-100">
+                  <h4 class="font-semibold text-gray-800 mb-2">Solutions</h4>
+                  <div *ngFor="let subItem of getSolutions(item)" class="flex items-center gap-5 cursor-pointer"
+                    (click)="clicked(subItem.path)">
+              
+                    <div class="flex items-center justify-center w-10 h-10 bg-teal-300 rounded-full">
+                      <mat-icon>add</mat-icon>
+                    </div>
+                <span class="px-2 py-1 rounded text-md hover:bg-teal-100">
+                  {{ subItem.label }}
+                </span>
+                </div>
+                </div>
+
+            <!-- Use Cases -->
+            <div class="flex flex-col gap-6 text-lg w-100">
+              <h4 class="font-semibold text-gray-800 mb-2">Use Cases</h4>
+              <div *ngFor="let subItem of getUseCases(item)" class="flex items-center gap-5 cursor-pointer"
+                (click)="clicked(subItem.path)">
+
+                <div class="flex items-center justify-center w-10 h-10 bg-teal-300 rounded-full">
+                  <mat-icon>add</mat-icon>
+                </div>
+                <span class="px-2 py-1 rounded hover:bg-teal-100 text-md">
+                  {{ subItem.label }}
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -64,11 +83,11 @@
     <div class="p-1 w-40 bg-teal-400  flex flex-row gap-2 rounded-tr-xl rounded-bl-xl rounded cursor-pointer"
       (click)="click()">
       <span class="text-md font-semibold ml-2 ">Book A Meeting</span>
-  <mat-icon class=" ml-auto">arrow_forward</mat-icon>
-  
-</div>
+      <mat-icon class=" ml-auto">arrow_forward</mat-icon>
+      
+      </div>
 
- 
+
     <button mat-icon-button class="md:hidden" (click)="toggleMobileMenu()">
       <mat-icon>menu</mat-icon>
     </button>
@@ -77,22 +96,49 @@
   <!-- Mobile Menu -->
   <div class="md:hidden bg-white shadow-lg p-2" *ngIf="mobileMenuOpen">
     <div *ngFor="let item of menuItems" class="border-t border-gray-100">
-  <button class="flex w-full items-center text-gray-700 hover:text-blue-600" (click)="toggleItem(item,menuItems)">
-    <span class="text-lg">{{ item.title }}</span>
-    <mat-icon class="ml-auto">
-      {{ item.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
-    </mat-icon>
-  </button>
-  
-  <div *ngIf="item.expanded" class="bg-gray-50 pl-6">
-    <a *ngFor="let subItem of item.children" href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-50">
-      {{subItem}}
-    </a>
-    </div>
-</div>
-    
-    
-    <button mat-raised-button color="primary" class=" m-4 bg-teal-400  text-white">
+      <!-- Top-level menu title -->
+      <button class="flex w-full items-center text-gray-700 hover:text-blue-600" (click)="toggleItem(item,menuItems)">
+        <span class="text-lg">{{ item.title }}</span>
+        <mat-icon class="ml-auto">
+          {{ item.expanded ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
+        </mat-icon>
+      </button>
+
+      <!-- Expanded Submenu -->
+      <div *ngIf="item.expanded" class="bg-gray-50 pl-6">
+        <!-- Case 1: Regular children (array) -->
+        <ng-container *ngIf="!(item.title === 'What we do')">
+          <a *ngFor="let subItem of getchildren(item)" (click)="clicked(subItem.path)"
+            class="block px-4 py-2 text-gray-700 hover:bg-blue-50">
+            {{ subItem.label }}
+          </a>
+        </ng-container>
+        
+        <!-- Case 2: Special 'What we do' (object with solution/use_case) -->
+        <ng-container *ngIf="item.title === 'What we do'">
+          <!-- Solutions -->
+          <div class="py-2">
+            <h4 class="font-semibold text-gray-800 mb-1">Solutions</h4>
+            <a *ngFor="let subItem of getSolutions(item)" (click)="clicked(subItem.path)"
+              class="block px-4 py-2 text-gray-700 hover:bg-blue-50">
+              {{ subItem.label }}
+            </a>
+          </div>
+          <!-- Use Cases -->
+          <div class="py-2" *ngIf="getSolutions(item).length > 0">
+            <h4 class="font-semibold text-gray-800 mb-1">Use Cases</h4>
+            <a *ngFor="let subItem of getUseCases(item)" (click)="clicked(subItem.path)"
+              class="block px-4 py-2 text-gray-700 hover:bg-blue-50">
+              {{ subItem.label }}
+            </a>
+          </div>
+        </ng-container>
+
+      </div>
+      </div>
+
+    <!-- Book a Meeting Button -->
+    <button mat-raised-button color="primary" class="m-4 bg-teal-400 text-white w-full">
       Book A Meeting
       <mat-icon>arrow_forward</mat-icon>
     </button>

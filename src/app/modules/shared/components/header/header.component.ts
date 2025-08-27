@@ -1,4 +1,9 @@
-import { Component, HostBinding, HostListener } from '@angular/core';
+import {
+  Component,
+  HostBinding,
+  HostListener,
+  ChangeDetectorRef,
+} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,55 +18,91 @@ export class HeaderComponent {
   menuItems = [
     {
       title: 'What we do',
-      children: [
-        { label: 'Assessment and improvment Projects', id: 'w1' },
-        { label: 'Course Evaluation and improvment', id: 'w2' },
-        { label: 'Sychnonus mulitilevel surveys monitoring', id: 'w3' },
-        { label: 'Curriculum evaluation and update strategy', id: 'w4' },
-        { label: 'Faculty perfomance boost', id: 'w5' },
-        { label: 'Accreditation and SSR', id: 'w6' },
-        { label: 'Student learning , success and engagement', id: 'w6' },
-      ],
+      children: {
+        solution: [
+          {
+            label: 'Assessment and improvment Projects',
+            path: 'assessment-projects',
+          },
+          {
+            label: 'Course Evaluation and improvment',
+            path: 'course-evaluation',
+          },
+          {
+            label: 'Sychnonus mulitilevel surveys monitoring',
+            path: 'surveys-monitoring',
+          },
+          {
+            label: 'Curriculum evaluation and update strategy',
+            path: 'curriculum-evaluation',
+          },
+          { label: 'Faculty perfomance boost', path: 'faculty-perfomance' },
+          { label: 'Accreditation and SSR', path: 'accredition' },
+          {
+            label: 'Student learning , success and engagement',
+            path: 'student-learning',
+          },
+        ],
+        use_case: [
+          {
+            label: 'Assessment and improvment Projects',
+            path: 'assessment-projects',
+          },
+          {
+            label: 'Course Evaluation and improvment',
+            path: 'course-evaluation',
+          },
+        ],
+      },
       expanded: false,
     },
     {
       title: 'Who we serve',
       children: [
-        { label: 'Clients', id: 'ws1' },
-        { label: 'Partners', id: 'ws2' },
-        { label: 'Industries', id: 'ws3' },
+        { label: 'Clients', path: 'ws1' },
+        { label: 'Partners', path: 'ws2' },
+        { label: 'Industries', path: 'ws3' },
       ],
       expanded: false,
     },
     {
       title: 'Resources',
       children: [
-        { label: 'Blog', id: 'r1' },
-        { label: 'Whitepapers', id: 'r2' },
-        { label: 'Case Studies', id: 'r3' },
+        { label: 'Blog', path: 'r1' },
+        { label: 'Whitepapers', path: 'r2' },
+        { label: 'Case Studies', path: 'r3' },
       ],
       expanded: false,
     },
     {
       title: 'Who we are',
       children: [
-        { label: 'About Us', id: 'ww1' },
-        { label: 'Team', id: 'ww2' },
-        { label: 'Careers', id: 'ww3' },
+        { label: 'About Us', path: 'ww1' },
+        { label: 'Team', path: 'ww2' },
+        { label: 'Careers', path: 'ww3' },
       ],
       expanded: false,
     },
     {
       title: 'For our clients',
       children: [
-        { label: 'Portal', id: 'c1' },
-        { label: 'Support', id: 'c2' },
-        { label: 'Contact', id: 'c3' },
+        { label: 'Portal', path: 'c1' },
+        { label: 'Support', path: 'c2' },
+        { label: 'Contact', path: 'c3' },
       ],
       expanded: false,
     },
   ];
+  getSolutions(item: any) {
+    return item.children.solution || [];
+  }
 
+  getUseCases(item: any) {
+    return item.children.use_case || [];
+  }
+  getchildren(item: any) {
+    return item.children || [];
+  }
   toggleMobileMenu() {
     this.mobileMenuOpen = !this.mobileMenuOpen;
   }
@@ -87,19 +128,7 @@ export class HeaderComponent {
   }
   clicked(subItem: any) {
     console.log(subItem);
-    switch (subItem) {
-      case 'w1':
-        this.router.navigate(['what-we-do/solution/assessment-projects']);
-        break;
-      case 'w2':
-        this.router.navigate(['what-we-do/solution/course-evaluation']);
-        break;
-      case 'w3':
-        this.router.navigate(['what-we-do/solution/surveys-monitoring']);
-        break;
-      // add more cases as needed
-      default:
-        console.log('Unknown submenu:', subItem);
-    }
+
+    this.router.navigate([`what-we-do/solution/${subItem}`]);
   }
 }

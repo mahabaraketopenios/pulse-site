@@ -2,10 +2,11 @@
 <div class=" relative flex flex-row gap-10  w-full p-5 bg-gradient-beige">
 
     <div class="flex flex-col gap-5  mx-auto">
-        <h3 class="text-7xl font-semibold">Assessment and improvment Projects</h3>
+        <h3 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold">Assessment and improvment Projects
+        </h3>
         <app-breadcrum></app-breadcrum>
     </div>
-    <div class="w-40 h-40 absolute left-0  rounded-br-full mr-auto bg-cyan-700 "></div>
+    <div class="w-40 h-40 absolute left-0 max-md:hidden rounded-br-full mr-auto bg-cyan-700 "></div>
     </div>
     <div class="flex flex-row justify-between items-center p-5 relative">
         <!-- Text -->
@@ -31,46 +32,46 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         <div class="absolute w-100 h-100 max-sm: bg-cyan-700 rounded-3xl transform rotate-30 top-6 "></div>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <img src="images/AP-Hero-Image-2048x1240.png" class="relative w-140 h-100 z-99" alt="">
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </div> -->
-<div
-    class="relative w-full max-w-140  aspect-[16/10] max-sm:aspect-[4/3] flex justify-center items-center max-sm:mt-5 max-md:w-120">
-    <!-- Background shape -->
     <div
+        class="relative w-full max-w-140  aspect-[16/10] max-sm:aspect-[4/3] flex justify-center items-center max-sm:mt-5 max-md:w-120">
+        <!-- Background shape -->
+        <div
             class="absolute w-80 h-80 max-sm:w-3/4 max-sm:h-3/4  max-md:w-80 max-md:h-80 bg-cyan-700 rounded-tr-[300px]  rounded-tl-[300px] top-5 right-10 max-sm:top-4 max-md:top-5 ">
         </div>
         <!-- Image in front -->
         <img src="images/AP-Hero-Image-2048x1240.png" class="relative  object-contain z-10" alt="Hero Image">
-        </div>
-        </div>
-        <div class="flex flex-col gap-10 mx-auto p-5 justify-center items-center">
-            <h3 class="text-3xl ">Measure Learning outcomes achievements</h3>
-        
-            <div class="flex flex-col gap-3 mt-5">
-                <div class="flex flex-row gap-5 items-center bg-teal-100 rounded-xl rounded-tl-3xl rounded-br-3xl  p-2 "
-                    *ngFor="let item of mesured">
-                    <img src="images/check-circle-svgrepo-com.svg" class="w-10 h-10" alt="">
-                    <span class="capitalize">{{item}}</span>
-                </div>
+    </div>
+    </div>
+    <div class="flex flex-col gap-10 mx-auto p-5 justify-center items-center">
+        <h3 class="text-3xl ">Measure Learning outcomes achievements</h3>
+    
+        <div class="flex flex-col gap-3 mt-5">
+            <div class="flex flex-row gap-5 items-center bg-teal-100 rounded-xl rounded-tl-3xl rounded-br-3xl  p-2 "
+                *ngFor="let item of mesured">
+                <img src="images/check-circle-svgrepo-com.svg" class="w-10 h-10" alt="">
+                <span class="capitalize">{{item}}</span>
             </div>
         </div>
-        <div class="flex flex-col gap-10 p-5 w-full justify-center items-center">
-            <h3 class="text-3xl">What to expect</h3>
-        
-            <div class="flex flex-row flex-wrap gap-10 mx-auto justify-center">
-                <div class="flex flex-col gap-5 rounded-xl bg-teal-100 p-3 w-72" *ngFor="let item of expect">
-                    <ng-container *ngIf="item.title">
-                        <div class="flex flex-row gap-3 items-center justify-center">
-                            <img [src]="item.icon" class="w-15 h-15 pr-2 border-r-4 border-teal-400" alt="">
-                            <h3 class="text-lg font-bold  ">
-                                {{ item.title }}
-                            </h3>
-                        </div>
-                        <ul *ngIf="item.text" class="mt-2 list-disc list-inside">
-                            <li *ngFor="let key of objectKeys(item.text)">
-                                {{ item.text[key] }}
-                            </li>
-                        </ul>
-                    </ng-container>
-                </div>
+    </div>
+    <div class="flex flex-col gap-10 p-5 w-full justify-center items-center">
+        <h3 class="text-3xl">What to expect</h3>
+    
+        <div class="flex flex-row flex-wrap gap-10 mx-auto justify-center">
+            <div class="flex flex-col gap-5 rounded-xl bg-teal-100 p-3 w-72" *ngFor="let item of expect">
+                <ng-container *ngIf="item.title">
+                    <div class="flex flex-row gap-3 items-center justify-center">
+                        <img [src]="item.icon" class="w-15 h-15 pr-2 border-r-4 border-teal-400" alt="">
+                        <h3 class="text-lg font-bold  ">
+                            {{ item.title }}
+                        </h3>
+                    </div>
+                    <ul *ngIf="item.text" class="mt-2 list-disc list-inside">
+                        <li *ngFor="let key of objectKeys(item.text)">
+                            {{ item.text[key] }}
+                        </li>
+                    </ul>
+                </ng-container>
             </div>
         </div>
+    </div>
 <app-footer></app-footer>
