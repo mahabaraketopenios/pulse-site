@@ -2,15 +2,20 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AssessmentComponent } from './components/assessment/assessment.component';
 import { CourseComponent } from './components/course/course.component';
+import { SolutionComponent } from './components/solution/solution.component';
 
 const routes: Routes = [
   {
-   path:'assessment-projects',
-   component:AssessmentComponent
+    path: 'solution/assessment-projects',
+    component: AssessmentComponent,
   },
-    {
-   path:'course-evaluation',
-   component:CourseComponent
+  {
+    path: 'solution/course-evaluation',
+    component: CourseComponent,
+  },
+  {
+    path: 'solution',
+    component: SolutionComponent,
   },
 ];
 

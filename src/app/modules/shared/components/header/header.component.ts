@@ -89,13 +89,13 @@ export class HeaderComponent {
     console.log(subItem);
     switch (subItem) {
       case 'w1':
-        this.router.navigate(['what-we-do/assessment-projects']);
+        this.router.navigate(['what-we-do/solution/assessment-projects']);
         break;
       case 'w2':
-        this.router.navigate(['what-we-do/course-evaluation']);
+        this.router.navigate(['what-we-do/solution/course-evaluation']);
         break;
       case 'w3':
-        this.router.navigate(['what-we-do/surveys-monitoring']);
+        this.router.navigate(['what-we-do/solution/surveys-monitoring']);
         break;
       // add more cases as needed
       default:

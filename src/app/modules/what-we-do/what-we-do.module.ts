@@ -4,13 +4,15 @@ import { AssessmentComponent } from './components/assessment/assessment.componen
 import { CourseComponent } from './components/course/course.component';
 import { WhatWeDoRoutingModule } from './what-routing.module';
 import { SharedModule } from '../shared/shared.module';
+import { SolutionComponent } from './components/solution/solution.component';
 
 
 
 @NgModule({
   declarations: [
     AssessmentComponent,
-    CourseComponent
+    CourseComponent,
+    SolutionComponent
   ],
   imports: [
     CommonModule,
