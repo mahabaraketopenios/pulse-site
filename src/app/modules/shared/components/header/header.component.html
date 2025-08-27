@@ -1,5 +1,5 @@
 
-<div class="flex items-center w-full  bg-cyan-100 p-4 x">
+<div class="flex items-center w-full bg-custom-mint-100 p-4 ">
   <div class="flex flex-row justify-end items-center gap-4 w-full">
     <!-- Sign In Button -->
     <button mat-button class="flex items-center text-slate-900 text-sm md:text-md">
@@ -20,8 +20,8 @@
   </div>
 </div>
 
-<div class=" shadow-md w-full bg-red-50">
-  <mat-toolbar class="flex justify-between items-center px-4 py-2 max-w-7xl mx-auto bg-red-50">
+<div class=" shadow-md w-full bg-gradient-beige ">
+  <div class="flex justify-between items-center px-4  py-2 max-w-7xl mx-auto ">
 
     <div class="flex items-center">
       <img src="images/image 19.png" alt="Logo" class="h-10">
@@ -37,14 +37,14 @@
         </button>
         
        
-        <div class="absolute z-50   bg-white shadow-lg rounded-md mt-1 p-3 w-fit" *ngIf="item.expanded">
+        <div class="absolute z-50 w-fit  bg-white shadow-lg rounded-md mt-1 p-3 " *ngIf="item.expanded">
           <div *ngIf="item.title!='What we do'">
           <a *ngFor="let subItem of item.children" 
             (click)="clicked(subItem.id)"
              class=" text-md block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">
             {{subItem.label}}
           </a></div>
-          <div *ngIf="item.title=='What we do'" class="flex flex-col gap-8 text-lg">
+          <div *ngIf="item.title=='What we do'" class="flex flex-col gap-8 text-lg w-fit">
             <div *ngFor="let subItem of item.children" class="flex items-center gap-5 cursor-pointer" (click)="clicked(subItem.id)">
           
               <div class="flex items-center justify-center w-10 h-10 bg-teal-300 rounded-full">
@@ -72,7 +72,7 @@
     <button mat-icon-button class="md:hidden" (click)="toggleMobileMenu()">
       <mat-icon>menu</mat-icon>
     </button>
-  </mat-toolbar>
+  </div>
 
   <!-- Mobile Menu -->
   <div class="md:hidden bg-white shadow-lg p-2" *ngIf="mobileMenuOpen">

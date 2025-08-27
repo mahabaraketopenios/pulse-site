@@ -1,6 +1,6 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { log } from 'console';
+
 import { filter } from 'rxjs';
 
 @Component({

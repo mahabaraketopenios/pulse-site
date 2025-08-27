@@ -119,7 +119,33 @@ const config = {
       },
       colors: {
         gray: colors.slate,
-        ...themes.default, // Add default theme colors
+        ...themes.default,
+        "custom-beige": {
+          100: "#FDF9F4",
+          200: "#F5EEDD", // original
+          300: "#EADFCB",
+        },
+        "custom-mint": {
+          100: "#CFF7EF",
+          200: "#7AE2CF", // original
+          300: "#4ACAB2",
+        },
+        "custom-teal": {
+          100: "#66C8C9",
+          200: "#077A7D", // original
+          300: "#045D5E",
+        },
+        "custom-navy": {
+          100: "#1B3946",
+          200: "#06202B", // original
+          300: "#03141A",
+        },
+      },
+      backgroundImage: {
+        "gradient-mint": "linear-gradient(135deg, #CFF7EF 50%, #4ACAB2 100%)",
+        "gradient-teal": "linear-gradient(135deg, #66C8C9 0%, #045D5E 100%)",
+        "gradient-beige": "linear-gradient(135deg, #FDF9F4 0%, #EADFCB 100%)",
+        "gradient-navy": "linear-gradient(135deg, #1B3946 50%, #06202B 100%)",
       },
       flex: {
         0: "0 0 auto",
