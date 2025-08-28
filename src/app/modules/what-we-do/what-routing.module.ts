@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AssessmentComponent } from './components/assessment/assessment.component';
-import { CourseComponent } from './components/course/course.component';
+import { AssessmentComponent } from './components/solution-sections/assessment/assessment.component';
+import { CourseComponent } from './components/solution-sections/course/course.component';
 import { SolutionComponent } from './components/solution/solution.component';
-import { CurriculumComponent } from './components/curriculum/curriculum.component';
-import { SurveysMonitoringComponent } from './components/surveys-monitoring/surveys-monitoring.component';
-import { FacultyPerformanceComponent } from './components/faculty-performance/faculty-performance.component';
-import { AccreditationComponent } from './components/accreditation/accreditation.component';
-import { StudentLearningComponent } from './components/student-learning/student-learning.component';
-import { StudentExperienceComponent } from './components/student-experience/student-experience.component';
-import { PlaningComponent } from './components/planing/planing.component';
+import { CurriculumComponent } from './components/solution-sections/curriculum/curriculum.component';
+import { SurveysMonitoringComponent } from './components/solution-sections/surveys-monitoring/surveys-monitoring.component';
+import { FacultyPerformanceComponent } from './components/solution-sections/faculty-performance/faculty-performance.component';
+import { AccreditationComponent } from './components/solution-sections/accreditation/accreditation.component';
+import { StudentLearningComponent } from './components/solution-sections/student-learning/student-learning.component';
+import { StudentExperienceComponent } from './components/solution-sections/student-experience/student-experience.component';
+import { PlaningComponent } from './components/solution-sections/planing/planing.component';
 
 const routes: Routes = [
   {
@@ -30,7 +30,7 @@ const routes: Routes = [
   },
   {
     path: 'solution/student-sucess-and-engagement',
-    component: StudentExperienceComponent,
+    component: StudentLearningComponent,
   },
   {
     path: 'solution/planing-self-study',
@@ -42,7 +42,7 @@ const routes: Routes = [
   },
   {
     path: 'solution/student-learning-experience',
-    component: StudentLearningComponent,
+    component: StudentExperienceComponent,
   },
   {
     path: 'solution/faculty-perfomance',
