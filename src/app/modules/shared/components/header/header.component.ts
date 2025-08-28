@@ -3,6 +3,8 @@ import {
   HostBinding,
   HostListener,
   ChangeDetectorRef,
+  ViewChild,
+  ElementRef,
 } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -13,7 +15,8 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
   mobileMenuOpen = false;
-  constructor(private router: Router) {}
+  constructor(private router: Router, private eRef: ElementRef) {}
+  @ViewChild('menuContainer') menuContainer!: ElementRef;
 
   menuItems = [
     {
@@ -23,34 +26,74 @@ export class HeaderComponent {
           {
             label: 'Assessment and improvment Projects',
             path: 'assessment-projects',
+            iSsolution: true,
           },
           {
             label: 'Course Evaluation and improvment',
             path: 'course-evaluation',
+            iSsolution: true,
           },
-          {
+          /* {
             label: 'Sychnonus mulitilevel surveys monitoring',
             path: 'surveys-monitoring',
-          },
+            iSsolution: true,
+          }, */
           {
             label: 'Curriculum evaluation and update strategy',
             path: 'curriculum-evaluation',
+            iSsolution: true,
           },
-          { label: 'Faculty perfomance boost', path: 'faculty-perfomance' },
-          { label: 'Accreditation and SSR', path: 'accredition' },
           {
-            label: 'Student learning , success and engagement',
-            path: 'student-learning',
+            label: 'Faculty perfomance boost',
+            path: 'faculty-perfomance',
+            iSsolution: true,
+          },
+          /* {
+            label: 'Accreditation and SSR',
+            path: 'accredition',
+            iSsolution: true,
+          }, */
+          {
+            label: 'Planning & Self-Study',
+            path: 'planing-self-study',
+            iSsolution: true,
+          },
+          {
+            label: 'Student learning experience',
+            path: 'student-learning-experience',
+            iSsolution: true,
+          },
+          {
+            label: 'Student  success and engagement',
+            path: 'student-sucess-and-engagement',
+            iSsolution: true,
           },
         ],
         use_case: [
           {
-            label: 'Assessment and improvment Projects',
-            path: 'assessment-projects',
+            label: 'Accreditation',
+            path: 'accreditation',
+            iSUse: true,
           },
           {
-            label: 'Course Evaluation and improvment',
-            path: 'course-evaluation',
+            label: 'Assessment ',
+            path: 'assessment',
+            iSUse: true,
+          },
+          {
+            label: 'continuous improvement ',
+            path: 'continuous-improvement',
+            iSUse: true,
+          },
+          {
+            label: 'Educaional development ',
+            path: 'educational-development',
+            iSUse: true,
+          },
+          {
+            label: 'Student success',
+            path: 'student-success',
+            iSUse: true,
           },
         ],
       },
@@ -104,6 +147,7 @@ export class HeaderComponent {
     return item.children || [];
   }
   toggleMobileMenu() {
+    console.log(this.mobileMenuOpen);
     this.mobileMenuOpen = !this.mobileMenuOpen;
   }
 
@@ -127,8 +171,29 @@ export class HeaderComponent {
     item.expanded = !item.expanded;
   }
   clicked(subItem: any) {
-    console.log(subItem);
+    if (subItem.iSsolution) {
+      console.log(subItem);
 
-    this.router.navigate([`what-we-do/solution/${subItem}`]);
+      this.router.navigate([`what-we-do/solution/${subItem.path}`]);
+    } else if (subItem.iSUse) {
+      this.router.navigate([`what-we-do/use-case/${subItem.path}`]);
+    }
+  }
+  @HostListener('document:click', ['$event'])
+  handleClickOutside(event: Event) {
+    if (
+      this.menuContainer &&
+      !this.menuContainer.nativeElement.contains(event.target)
+    ) {
+      this.closeAllMenus();
+    }
+  }
+
+  closeAllMenus(): void {
+    if (!this.mobileMenuOpen) {
+      this.menuItems.forEach((item) => {
+        item.expanded = false;
+      });
+    }
   }
 }

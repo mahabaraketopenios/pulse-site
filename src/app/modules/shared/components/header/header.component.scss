@@ -30,3 +30,9 @@ transition: transform 0.3s ease-in-out;
 }
 
 */
+.menu-item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}

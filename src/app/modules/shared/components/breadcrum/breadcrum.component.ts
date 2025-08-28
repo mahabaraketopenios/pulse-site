@@ -27,7 +27,9 @@ export class BreadcrumComponent implements OnInit {
 
   private updateBreadcrumb(url: string) {
     const urlSegments = url.split('/').filter(Boolean);
-    this.breadcrumbParts = urlSegments.slice(-2);
+     this.breadcrumbParts = urlSegments
+       .slice(-2)
+       .map((segment) => segment.replace(/-/g, ' '));
     console.log('Breadcrumb updated:', this.breadcrumbParts);
   }
   getLink(index: number) {
