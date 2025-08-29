@@ -93,7 +93,7 @@ export class HeaderComponent {
             path: 'assessment',
             iSUse: true,
           },
-          {
+          /*  {
             label: 'continuous improvement ',
             path: 'continuous-improvement',
             iSUse: true,
@@ -112,7 +112,7 @@ export class HeaderComponent {
             label: 'Faculty development',
             path: 'faculty-development',
             iSUse: true,
-          },
+          }, */
         ],
       },
       expanded: false,
@@ -135,7 +135,7 @@ export class HeaderComponent {
       ],
       expanded: false,
     },
-    {
+    /* {
       title: 'Resources',
       children: [
         { label: 'Blog', path: 'r1' },
@@ -143,22 +143,21 @@ export class HeaderComponent {
         { label: 'Case Studies', path: 'r3' },
       ],
       expanded: false,
-    },
+    }, */
     {
       title: 'Who we are',
       children: [
-        { label: 'About Us', path: 'ww1' },
-        { label: 'Team', path: 'ww2' },
-        { label: 'Careers', path: 'ww3' },
+        { label: 'Company', path: 'who-are-we/company' },
+        { label: 'Contact us', path: 'who-are-we/contact-us' },
       ],
       expanded: false,
     },
     {
       title: 'For our clients',
       children: [
-        { label: 'Portal', path: 'c1' },
-        { label: 'Support', path: 'c2' },
-        { label: 'Contact', path: 'c3' },
+        { label: 'Help Center', path: 'client/help' },
+        { label: 'Professional service', path: 'client/professional-service' },
+        /* { label: 'Contact', path: 'c3' }, */
       ],
       expanded: false,
     },

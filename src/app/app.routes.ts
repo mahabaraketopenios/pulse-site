@@ -23,6 +23,18 @@ export const routes: Routes = [
         (m) => m.WhoWeServeModule
       ),
   },
+  {
+    path: 'who-are-we',
+    loadChildren: () =>
+      import('./modules/who-are-we/who-are-we.module').then(
+        (m) => m.WhoAreWeModule
+      ),
+  },
+  {
+    path: 'client',
+    loadChildren: () =>
+      import('./modules/client/client.module').then((m) => m.ClientModule),
+  },
   // Add more routes as needed
   {
     path: '**',
