@@ -12,6 +12,7 @@ import { PulseRoutingModule } from '../pulse/pulse-routing.module';
 import { SectionHeaderComponent } from './components/section-header/section-header.component';
 import { CheckedListComponent } from './components/checked-list/checked-list.component';
 import { CardListComponent } from './components/card-list/card-list.component';
+import { SectionIntroComponent } from './components/section-intro/section-intro.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CardListComponent } from './components/card-list/card-list.component';
     SectionHeaderComponent,
     CheckedListComponent,
     CardListComponent,
+    SectionIntroComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +35,7 @@ import { CardListComponent } from './components/card-list/card-list.component';
   ],
   exports: [
     HeaderComponent,
+    SectionIntroComponent,
     CardListComponent,
     CheckedListComponent,
     FooterComponent,

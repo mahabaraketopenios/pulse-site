@@ -1,34 +1,10 @@
 <app-header></app-header>
 
 <app-section-header [title]="'Faculty perfomance boost'"></app-section-header>
-<div class="flex flex-row justify-between items-center p-5 relative ">
-    <div class="flex flex-col gap-5 ml-15 max-w-2xl">
-
-        <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold leading-tight">
-            Monitor Faculty impact
-        </h1>
 
 
-        <p class="text-lg sm:text-xl md:text-2xl text-gray-700 leading-snug">
-            Boost the faculty with new features.<br> Reduce the gap with industry partners.
-        </p>
-
-
-        <div class="p-3 w-40 bg-teal-400 flex flex-row gap-2 rounded-tr-xl rounded-bl-xl cursor-pointer mt-4">
-            <span class="text-md font-semibold ml-2">Book A Meeting</span>
-            <mat-icon class="text-3xl ml-auto">arrow_forward</mat-icon>
-        </div>
-    </div>
-    <div
-        class="relative w-full max-w-140  aspect-[16/10] max-sm:aspect-[4/3] flex justify-center items-center max-sm:mt-5 max-md:w-120">
-        <div
-            class="absolute w-80 h-80 max-sm:w-3/4 max-sm:h-3/4  max-md:w-80 max-md:h-80 bg-cyan-700 rounded-tr-[300px]  rounded-tl-[300px] top-5 right-10 max-sm:top-4 max-md:top-5 ">
-        </div>
-
-        <img src="images/AP-Hero-Image-2048x1240.png" class="relative  object-contain z-10" alt="Hero Image">
-    </div>
-</div>
-
+<app-section-intro [title]="' Monitor Faculty impact'" [image_path]="'images/AP-Hero-Image-2048x1240.png'"
+    [subtitle]="'Boost the faculty with new features.<br> Reduce the gap with industry partners.'"></app-section-intro>
 <app-checked-list [mesured]="mesured" [mesured2]="mesured2" [title1]="'Promote professional development'"
     [title2]="'Access data on demand'"></app-checked-list>
 <app-footer></app-footer>
