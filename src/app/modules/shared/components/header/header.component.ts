@@ -86,13 +86,18 @@ export class HeaderComponent {
             iSUse: true,
           },
           {
-            label: 'Educaional development ',
-            path: 'educational-development',
+            label: 'Educational impact ',
+            path: 'educational-impact',
             iSUse: true,
           },
           {
             label: 'Student success',
             path: 'student-success',
+            iSUse: true,
+          },
+          {
+            label: 'Faculty development',
+            path: 'faculty-development',
             iSUse: true,
           },
         ],
@@ -147,7 +152,6 @@ export class HeaderComponent {
     return item.children || [];
   }
   toggleMobileMenu() {
-    console.log(this.mobileMenuOpen);
     this.mobileMenuOpen = !this.mobileMenuOpen;
   }
 
@@ -156,7 +160,6 @@ export class HeaderComponent {
   }
 
   click() {
-    console.log('meeting');
     /*  (window as any).Calendly.initPopupWidget({
        url: 'https://calendly.com/mahabaraket-openios',
      }); */
@@ -172,8 +175,6 @@ export class HeaderComponent {
   }
   clicked(subItem: any) {
     if (subItem.iSsolution) {
-      console.log(subItem);
-
       this.router.navigate([`what-we-do/solution/${subItem.path}`]);
     } else if (subItem.iSUse) {
       this.router.navigate([`what-we-do/use-case/${subItem.path}`]);

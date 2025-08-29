@@ -30,12 +30,10 @@ export class BreadcrumComponent implements OnInit {
      this.breadcrumbParts = urlSegments
        .slice(-2)
        .map((segment) => segment.replace(/-/g, ' '));
-    console.log('Breadcrumb updated:', this.breadcrumbParts);
   }
   getLink(index: number) {
   // Build path up to this segment
-  console.log(this.breadcrumbParts.slice(0, index + 1));
-  console.log(['/what-we-do', ...this.breadcrumbParts.slice(0, index + 1)]);
+ 
   return ['/what-we-do', ...this.breadcrumbParts.slice(0, index + 1)];
 }
 }

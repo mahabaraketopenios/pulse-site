@@ -9,9 +9,15 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
 import { BreadcrumComponent } from './components/breadcrum/breadcrum.component';
 import { PulseRoutingModule } from '../pulse/pulse-routing.module';
+import { SectionHeaderComponent } from './components/section-header/section-header.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, BreadcrumComponent],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    BreadcrumComponent,
+    SectionHeaderComponent,
+  ],
   imports: [
     CommonModule,
     MatIconModule,
@@ -24,6 +30,7 @@ import { PulseRoutingModule } from '../pulse/pulse-routing.module';
   exports: [
     HeaderComponent,
     FooterComponent,
+    SectionHeaderComponent,
     BreadcrumComponent,
     MatIconModule,
     MatButtonModule,

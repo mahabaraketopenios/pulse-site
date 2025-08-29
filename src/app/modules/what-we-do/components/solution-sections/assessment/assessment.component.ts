@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-assessment',
+  selector: 'app-assessment-use',
   templateUrl: './assessment.component.html',
   styleUrl: './assessment.component.scss',
 })

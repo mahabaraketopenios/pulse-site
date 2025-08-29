@@ -12,6 +12,13 @@ import { AccreditationComponent } from './components/solution-sections/accredita
 import { StudentLearningComponent } from './components/solution-sections/student-learning/student-learning.component';
 import { StudentExperienceComponent } from './components/solution-sections/student-experience/student-experience.component';
 import { PlaningComponent } from './components/solution-sections/planing/planing.component';
+import { UseCaseComponent } from './components/use-case/use-case.component';
+import { ContiniousComponent } from './components/use-case-sections/continious/continious.component';
+import { EducationalComponent } from './components/use-case-sections/educational/educational.component';
+import { FacultyComponent } from './components/use-case-sections/faculty/faculty.component';
+import { StudentComponent } from './components/use-case-sections/student/student.component';
+import { AccreditationUseComponent } from './components/use-case-sections/accreditation-use/accreditation-use.component';
+import { AssessmentUseComponent } from './components/use-case-sections/assessment-use/assessment-use.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +32,13 @@ import { PlaningComponent } from './components/solution-sections/planing/planing
     StudentLearningComponent,
     StudentExperienceComponent,
     PlaningComponent,
+    UseCaseComponent,
+    ContiniousComponent,
+    EducationalComponent,
+    FacultyComponent,
+    StudentComponent,
+    AccreditationUseComponent,
+    AssessmentUseComponent,
   ],
   imports: [CommonModule, WhatWeDoRoutingModule, SharedModule],
 })
