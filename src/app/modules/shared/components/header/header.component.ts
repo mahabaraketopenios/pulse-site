@@ -7,6 +7,14 @@ import {
   ElementRef,
 } from '@angular/core';
 import { Router } from '@angular/router';
+import { RequestDemoComponent } from '../request-demo/request-demo.component';
+export {};
+declare global {
+  interface Window {
+    Calendly: any;
+  }
+}
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +23,11 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
   mobileMenuOpen = false;
-  constructor(private router: Router, private eRef: ElementRef) {}
+  constructor(
+    private router: Router,
+    private eRef: ElementRef,
+    private dialog: MatDialog
+  ) {}
   @ViewChild('menuContainer') menuContainer!: ElementRef;
 
   menuItems = [
@@ -107,9 +119,15 @@ export class HeaderComponent {
     {
       title: 'Who we serve',
       children: [
-        { label: 'Clients', path: 'ws1' },
-        { label: 'Partners', path: 'ws2' },
-        { label: 'Industries', path: 'ws3' },
+        { label: 'Overview', path: 'overview' },
+        { label: 'Provost', path: 'provost' },
+        { label: 'Faculty affaires leaders', path: 'faculty-affaires-leaders' },
+        {
+          label: 'Institutional effectiveness leaders',
+          path: 'institutional-effectiveness-leaders',
+        },
+        { label: 'Deans', path: 'deans' },
+        { label: 'Student Success', path: 'student-success' },
       ],
       expanded: false,
     },
@@ -160,9 +178,10 @@ export class HeaderComponent {
   }
 
   click() {
-    /*  (window as any).Calendly.initPopupWidget({
-       url: 'https://calendly.com/mahabaraket-openios',
-     }); */
+    this.dialog.open(RequestDemoComponent, {
+      width: '90%', // adjust size
+      height: '87%',
+    });
   }
   toggleItem(item: any, allItems: any[]) {
     allItems.forEach((i) => {

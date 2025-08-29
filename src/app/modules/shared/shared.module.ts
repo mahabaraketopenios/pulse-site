@@ -13,6 +13,8 @@ import { SectionHeaderComponent } from './components/section-header/section-head
 import { CheckedListComponent } from './components/checked-list/checked-list.component';
 import { CardListComponent } from './components/card-list/card-list.component';
 import { SectionIntroComponent } from './components/section-intro/section-intro.component';
+import { RequestDemoComponent } from './components/request-demo/request-demo.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { SectionIntroComponent } from './components/section-intro/section-intro.
     CheckedListComponent,
     CardListComponent,
     SectionIntroComponent,
+    RequestDemoComponent,
   ],
   imports: [
     CommonModule,
@@ -32,6 +35,7 @@ import { SectionIntroComponent } from './components/section-intro/section-intro.
     MatExpansionModule,
     MatCardModule,
     PulseRoutingModule,
+    MatDialogModule,
   ],
   exports: [
     HeaderComponent,
@@ -42,6 +46,7 @@ import { SectionIntroComponent } from './components/section-intro/section-intro.
     SectionHeaderComponent,
     BreadcrumComponent,
     MatIconModule,
+    MatDialogModule,
     MatButtonModule,
     MatToolbarModule,
     MatExpansionModule,
