@@ -35,38 +35,8 @@
         <img src="images/AP-Hero-Image-2048x1240.png" class="relative  object-contain z-10" alt="Hero Image">
     </div>
 </div>
-<div class="flex flex-col gap-2 mx-auto p-5 justify-center items-center">
-    <h3 class="text-3xl ">Measure Learning outcomes achievements</h3>
 
-    <div class="flex flex-col gap-3 mt-5 ">
-        <div data-aos="fade-up" data-aos-duration="1000"
-            class="flex flex-row gap-5 items-center bg-teal-100 rounded-xl rounded-tl-3xl rounded-br-3xl  p-2 "
-            *ngFor="let item of mesured">
-            <img src="images/check-circle-svgrepo-com.svg" class="w-10 h-10" alt="">
-            <span class="capitalize">{{item}}</span>
-        </div>
-    </div>
-</div>
-<div class="flex flex-col gap-5 p-5 w-full justify-center items-center">
-    <h3 class="text-3xl">What to expect</h3>
+<app-checked-list [mesured]="mesured" [title1]="'Measure Learning outcomes achievements'"></app-checked-list>
 
-    <div class="flex flex-row flex-wrap gap-10 mx-auto justify-center">
-        <div data-aos="flip-left" data-aos-duration="2000"
-            class="flex flex-col gap-5 rounded-xl bg-custom-beige-100 shadow-xl p-3 w-72" *ngFor="let item of expect">
-            <ng-container *ngIf="item.title">
-                <div class="flex flex-row gap-3 items-center justify-center">
-                    <img [src]="item.icon" class="w-15 h-15 pr-2 border-r-4 border-teal-400" alt="">
-                    <h3 class="text-lg font-bold  ">
-                        {{ item.title }}
-                    </h3>
-                </div>
-                <ul *ngIf="item.text" class="mt-2 list-disc list-inside">
-                    <li *ngFor="let key of objectKeys(item.text)">
-                        {{ item.text[key] }}
-                    </li>
-                </ul>
-            </ng-container>
-        </div>
-    </div>
-</div>
+<app-card-list [title]="'What to expect'" [list]="expect"></app-card-list>
 <app-footer></app-footer>

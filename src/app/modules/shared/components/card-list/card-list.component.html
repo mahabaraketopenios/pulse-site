@@ -1,0 +1,22 @@
+<div class="flex flex-col gap-5 p-5 w-full justify-center items-center">
+    <h3 class="text-3xl">{{title}}</h3>
+
+    <div class="flex flex-row flex-wrap gap-10 mx-auto justify-center">
+        <div data-aos="flip-left" data-aos-duration="2000"
+            class="flex flex-col gap-5 rounded-xl bg-custom-beige-100 shadow-xl p-3 w-72" *ngFor="let item of list">
+            <ng-container *ngIf="item.title">
+                <div class="flex flex-row gap-3 items-center justify-center">
+                    <img [src]="item.icon" class="w-15 h-15 pr-2 border-r-4 border-teal-400" alt="">
+                    <h3 class="text-lg font-bold  ">
+                        {{ item.title }}
+                    </h3>
+                </div>
+                <ul *ngIf="item.text" class="mt-2 list-disc list-inside">
+                    <li *ngFor="let key of objectKeys(item.text)">
+                        {{ item.text[key] }}
+                    </li>
+                </ul>
+            </ng-container>
+        </div>
+    </div>
+</div>

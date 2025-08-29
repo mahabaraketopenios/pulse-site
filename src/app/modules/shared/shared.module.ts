@@ -10,6 +10,8 @@ import { MatCardModule } from '@angular/material/card';
 import { BreadcrumComponent } from './components/breadcrum/breadcrum.component';
 import { PulseRoutingModule } from '../pulse/pulse-routing.module';
 import { SectionHeaderComponent } from './components/section-header/section-header.component';
+import { CheckedListComponent } from './components/checked-list/checked-list.component';
+import { CardListComponent } from './components/card-list/card-list.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { SectionHeaderComponent } from './components/section-header/section-head
     FooterComponent,
     BreadcrumComponent,
     SectionHeaderComponent,
+    CheckedListComponent,
+    CardListComponent,
   ],
   imports: [
     CommonModule,
@@ -29,6 +33,8 @@ import { SectionHeaderComponent } from './components/section-header/section-head
   ],
   exports: [
     HeaderComponent,
+    CardListComponent,
+    CheckedListComponent,
     FooterComponent,
     SectionHeaderComponent,
     BreadcrumComponent,

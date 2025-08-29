@@ -29,35 +29,8 @@
         <img src="images/AP-Hero-Image-2048x1240.png" class="relative  object-contain z-10" alt="Hero Image">
     </div>
 </div>
-<div class="flex flex-col md:flex-row gap-5  justify-center items-start">
-    <div class="flex flex-col gap-2 p-5 ">
-        <h3 class="text-3xl capitalize"> realtime student performance insights
-        </h3>
 
 
-        <div class="flex flex-col gap-3 mt-5">
-            <div data-aos="fade-up" data-aos-duration="1000"
-                class="flex flex-row gap-5 items-center bg-teal-100 rounded-xl rounded-tl-3xl rounded-br-3xl  p-2 "
-                *ngFor="let item of mesured">
-                <img src="images/check-circle-svgrepo-com.svg" class="w-10 h-10" alt="">
-                <span class="capitalize">{{item}}</span>
-            </div>
-        </div>
-    </div>
-    <div class="flex flex-col gap-2 p-5 ">
-        <h3 class="text-3xl capitalize"> insight to imporve student success
-        </h3>
-
-
-        <div class="flex flex-col gap-3 mt-5">
-            <div data-aos="fade-up" data-aos-duration="1000"
-                class="flex flex-row gap-5 items-center bg-teal-100 rounded-xl rounded-tl-3xl rounded-br-3xl  p-2 "
-                *ngFor="let item of mesured2">
-                <img src="images/check-circle-svgrepo-com.svg" class="w-10 h-10" alt="">
-                <span class="capitalize">{{item}}</span>
-            </div>
-        </div>
-    </div>
-</div>
-
+<app-checked-list [mesured]="mesured" [mesured2]="mesured2" [title1]="'realtime student performance insights'"
+    [title2]="'insight to imporve student success'"></app-checked-list>
 <app-footer></app-footer>

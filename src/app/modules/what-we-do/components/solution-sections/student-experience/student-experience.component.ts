@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class StudentExperienceComponent {
   mesured: String[] = [
-    'Ro?? assesssment ans student managmanet',
+    'Robust assesssment and student managmanet',
     'assessment class and field work for full picture ',
     'coordinate student Professional performance',
     'manage portfolios to showcase entire student Learning Journey',

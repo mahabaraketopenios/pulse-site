@@ -1,0 +1,30 @@
+<div class="flex flex-col items-start md:flex-row justify-center">
+    <div class="flex flex-col gap-2  p-5 justify-center items-center">
+        <h3 class="text-3xl capitalize">{{title1}}
+        </h3>
+        <span *ngIf="description1" class="text-xl capitalize">{{description1}}</span> 
+
+        <div class="flex flex-col gap-3 mt-5">
+            <div data-aos="fade-up" data-aos-duration="1000"
+                class="flex flex-row gap-5 items-center bg-teal-100 rounded-xl rounded-tl-3xl rounded-br-3xl  p-2 "
+                *ngFor="let item of mesured">
+                <img src="images/check-circle-svgrepo-com.svg" class="w-10 h-10" alt="">
+                <span class="capitalize">{{item}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col gap-2  p-5 justify-center items-center" *ngIf="mesured2.length>0">
+        <h3 class="text-3xl capitalize">{{title1 }}
+        </h3>
+        <span class="text-xl capitalize">{{description2}}</span> 
+
+        <div class="flex flex-col gap-3 mt-5">
+            <div data-aos="fade-up" data-aos-duration="1000"
+                class="flex flex-row gap-5 items-center bg-teal-100 rounded-xl rounded-tl-3xl rounded-br-3xl  p-2 "
+                *ngFor="let item of mesured2">
+                <img src="images/check-circle-svgrepo-com.svg" class="w-10 h-10" alt="">
+                <span class="capitalize">{{item}}</span>
+            </div>
+        </div>
+    </div>
+</div>
