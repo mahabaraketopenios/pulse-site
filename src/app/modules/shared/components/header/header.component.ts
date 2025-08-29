@@ -15,6 +15,7 @@ declare global {
   }
 }
 import { MatDialog } from '@angular/material/dialog';
+import { log } from 'console';
 
 @Component({
   selector: 'app-header',
@@ -119,15 +120,18 @@ export class HeaderComponent {
     {
       title: 'Who we serve',
       children: [
-        { label: 'Overview', path: 'overview' },
-        { label: 'Provost', path: 'provost' },
-        { label: 'Faculty affaires leaders', path: 'faculty-affaires-leaders' },
+        { label: 'Overview', path: 'who-we-serve/overview' },
+        { label: 'Provost', path: 'who-we-serve/provost' },
+        {
+          label: 'Faculty affaires leaders',
+          path: 'who-we-serve/faculty-affaires-leaders',
+        },
         {
           label: 'Institutional effectiveness leaders',
-          path: 'institutional-effectiveness-leaders',
+          path: 'who-we-serve/institutional-effectiveness-leaders',
         },
-        { label: 'Deans', path: 'deans' },
-        { label: 'Student Success', path: 'student-success' },
+        { label: 'Deans', path: 'who-we-serve/deans' },
+        { label: 'Student Success', path: 'who-we-serve/student-success' },
       ],
       expanded: false,
     },
@@ -197,6 +201,9 @@ export class HeaderComponent {
       this.router.navigate([`what-we-do/solution/${subItem.path}`]);
     } else if (subItem.iSUse) {
       this.router.navigate([`what-we-do/use-case/${subItem.path}`]);
+    } else {
+      console.log(subItem.path);
+      this.router.navigate([`${subItem.path}`]);
     }
   }
   @HostListener('document:click', ['$event'])
