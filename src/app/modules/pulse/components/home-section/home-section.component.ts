@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { RequestDemoComponent } from '../../../shared/components/request-demo/request-demo.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-home-section',
@@ -6,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './home-section.component.scss',
 })
 export class HomeSectionComponent {
+  constructor(private dialog: MatDialog) {}
   faqs: any[] = [
     {
       question: 'D1. Specification Layer',
@@ -36,6 +39,12 @@ export class HomeSectionComponent {
   toggleFaq(index: number): void {
     this.faqs.forEach((faq, i) => {
       faq.open = i === index ? !faq.open : false;
+    });
+  }
+  click() {
+    this.dialog.open(RequestDemoComponent, {
+      width: '90%', // adjust size
+      height: '87%',
     });
   }
 }

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { RequestDemoComponent } from '../request-demo/request-demo.component';
+import { MatDialog } from '@angular/material/dialog';
 interface FooterItem {
   label: string;
   action?: () => void;
@@ -77,16 +79,22 @@ export class FooterComponent {
         { label: 'Contact Us', action: () => this.onClick('Contact Us') },
         {
           label: 'Request Demo',
-          action: () => this.onClick('Request Demo'),
+          action: () => this.click(),
           isButton: true,
           motif: true,
         }, // <-- distinct
       ],
     },
   ];
-
+  constructor(private dialog: MatDialog) {}
   onClick(label: string) {
     console.log('Clicked:', label);
     // Add routing, modal, or any action here
+  }
+  click() {
+    this.dialog.open(RequestDemoComponent, {
+      width: '90%', // adjust size
+      height: '87%',
+    });
   }
 }
