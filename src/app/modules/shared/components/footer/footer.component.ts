@@ -27,15 +27,15 @@ export class FooterComponent {
         /* { label: 'Our Solution', path: '/solution' }, */
         {
           label: 'Assessment Projects',
-          path: 'solution/assessment-projects',
+          path: 'what-we-do/solution/assessment-projects',
         },
         {
           label: 'Course Evaluations & Surveys',
-          path: '/solution/course-evaluation',
+          path: 'what-we-do/solution/course-evaluation',
         },
         {
           label: 'Curriculum Strategy',
-          path: '/solution/curriculum-evaluation',
+          path: 'what-we-do//solution/curriculum-evaluation',
         },
         /*  {
           label: 'Faculty Success',
@@ -43,15 +43,15 @@ export class FooterComponent {
         }, */
         {
           label: 'Planning & Self-Study',
-          path: '/solution/planing-self-study',
+          path: 'what-we-do//solution/planing-self-study',
         },
         {
           label: 'Student Learning Experience',
-          path: '/solution/student-learning-experience',
+          path: 'what-we-do//solution/student-learning-experience',
         },
         {
           label: 'Student Success & Engagement',
-          path: '/solution/student-sucess-and-engagement',
+          path: 'what-we-do/solution/student-sucess-and-engagement',
         },
       ],
     },
@@ -78,7 +78,7 @@ export class FooterComponent {
       items: [
         { label: 'Sign In', path: 'Sign In' },
         { label: 'Get Support', path: 'Get Support' },
-        { label: 'Contact Us', path: 'Contact Us' },
+        { label: 'Contact Us', path: '/who-are-we/contact-us' },
         {
           label: 'Request Demo',
           path: '',
@@ -92,7 +92,7 @@ export class FooterComponent {
   onClick(label: string) {
     console.log('Clicked:', label);
     // Add routing, modal, or any action here
-    this.router.navigate([`what-we-do/${label}`]);
+    this.router.navigate([`${label}`]);
   }
   click() {
     this.dialog.open(RequestDemoComponent, {
