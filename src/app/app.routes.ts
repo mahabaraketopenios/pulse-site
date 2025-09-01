@@ -1,4 +1,3 @@
-import { WhoWeServeModule } from './modules/who-we-serve/who-we-serve.module';
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [

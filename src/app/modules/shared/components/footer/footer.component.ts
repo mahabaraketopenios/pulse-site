@@ -92,7 +92,7 @@ export class FooterComponent {
   onClick(label: string) {
     console.log('Clicked:', label);
     // Add routing, modal, or any action here
-    this.router.navigate([`${label}`]);
+  this.router.navigate([`${label}`]);
   }
   click() {
     this.dialog.open(RequestDemoComponent, {
