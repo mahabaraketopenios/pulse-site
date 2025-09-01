@@ -6,14 +6,14 @@
     <ng-container *ngFor="let item of column.items">
         <!-- Regular link -->
         <div *ngIf="!item.isButton" class="mb-2 cursor-pointer hover:text-teal-600 transition text-start"
-            (click)="item.action?.()">
+            (click)="onClick(item.path)">
             {{ item.label }}
         </div>
 
         <!-- Button -->
         <div *ngIf="item.isButton"
             class="p-2 w-fit bg-teal-400 flex flex-row items-center gap-2 rounded-tr-xl rounded-bl-xl rounded cursor-pointer hover:bg-teal-400 transition mt-2"
-            (click)="item.action?.()">
+            (click)="click()">
             <span class="text-md font-semibold">{{ item.label }}</span>
             <mat-icon class="!text-black">arrow_forward</mat-icon>
         </div>

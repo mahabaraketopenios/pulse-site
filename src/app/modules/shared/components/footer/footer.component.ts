@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { RequestDemoComponent } from '../request-demo/request-demo.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+
 interface FooterItem {
   label: string;
-  action?: () => void;
+  path: string;
   isButton?: boolean;
   motif?: boolean;
 }
@@ -22,34 +24,34 @@ export class FooterComponent {
     {
       title: 'Pulse One Solution',
       items: [
-        { label: 'Our Solution', action: () => this.onClick('Our Solution') },
+        { label: 'Our Solution', path: '/solution' },
         {
           label: 'Assessment Projects',
-          action: () => this.onClick('Assessment Projects'),
+          path: 'solution/assessment-projects',
         },
         {
           label: 'Course Evaluations & Surveys',
-          action: () => this.onClick('Course Evaluations & Surveys'),
+          path: '/solution/course-evaluation',
         },
         {
           label: 'Curriculum Strategy',
-          action: () => this.onClick('Curriculum Strategy'),
+          path: '/solution/curriculum-evaluation',
         },
-        {
+        /*  {
           label: 'Faculty Success',
           action: () => this.onClick('Faculty Success'),
-        },
+        }, */
         {
           label: 'Planning & Self-Study',
-          action: () => this.onClick('Planning & Self-Study'),
+          path: '/solution/planing-self-study',
         },
         {
-          label: 'Student Learning & Licensure',
-          action: () => this.onClick('Student Learning & Licensure'),
+          label: 'Student Learning Experience',
+          path: '/solution/student-learning-experience',
         },
         {
           label: 'Student Success & Engagement',
-          action: () => this.onClick('Student Success & Engagement'),
+          path: '/solution/student-sucess-and-engagement',
         },
       ],
     },
@@ -58,38 +60,39 @@ export class FooterComponent {
       items: [
         {
           label: 'About Pulse One',
-          action: () => this.onClick('About Pulse One'),
+          path: 'About Pulse One',
         },
         {
           label: 'Legal Resources',
-          action: () => this.onClick('Legal Resources'),
+          path: 'Legal Resources',
         },
-        { label: 'Join Our Team', action: () => this.onClick('Join Our Team') },
-        { label: 'Events', action: () => this.onClick('Events') },
-        { label: 'Press', action: () => this.onClick('Press') },
-        { label: 'Resources', action: () => this.onClick('Resources') },
-        { label: 'AWS Hosting', action: () => this.onClick('AWS Hosting') },
+        { label: 'Join Our Team', path: 'Join Our Team' },
+        { label: 'Events', path: 'Events' },
+        { label: 'Press', path: 'Press' },
+        { label: 'Resources', path: 'Resources' },
+        { label: 'AWS Hosting', path: 'AWS Hosting' },
       ],
     },
     {
       title: 'Connect',
       items: [
-        { label: 'Sign In', action: () => this.onClick('Sign In') },
-        { label: 'Get Support', action: () => this.onClick('Get Support') },
-        { label: 'Contact Us', action: () => this.onClick('Contact Us') },
+        { label: 'Sign In', path: 'Sign In' },
+        { label: 'Get Support', path: 'Get Support' },
+        { label: 'Contact Us', path: 'Contact Us' },
         {
           label: 'Request Demo',
-          action: () => this.click(),
+          path: '',
           isButton: true,
           motif: true,
         }, // <-- distinct
       ],
     },
   ];
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private router: Router) {}
   onClick(label: string) {
     console.log('Clicked:', label);
     // Add routing, modal, or any action here
+    this.router.navigate([label]);
   }
   click() {
     this.dialog.open(RequestDemoComponent, {
