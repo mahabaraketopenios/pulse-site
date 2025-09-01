@@ -24,7 +24,7 @@ export class FooterComponent {
     {
       title: 'Pulse One Solution',
       items: [
-        { label: 'Our Solution', path: '/solution' },
+        /* { label: 'Our Solution', path: '/solution' }, */
         {
           label: 'Assessment Projects',
           path: 'solution/assessment-projects',
@@ -92,7 +92,7 @@ export class FooterComponent {
   onClick(label: string) {
     console.log('Clicked:', label);
     // Add routing, modal, or any action here
-    this.router.navigate([label]);
+    this.router.navigate([`what-we-do/${label}`]);
   }
   click() {
     this.dialog.open(RequestDemoComponent, {
