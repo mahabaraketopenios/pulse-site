@@ -1,0 +1,59 @@
+@if (slides.length) {
+<div class="relative flex flex-col rounded-md p-2" *ngIf="slides.length" data-aos="fade-up" data-aos-duration="1000">
+  <div class="my-0" #sliderContainer>
+    <div class="slider overflow-hidden rounded-t-sm">
+      <div class="flex gap-4 transition-transform duration-300 ease-in-out h-full justify-center" 
+           [style.transform]="'translateX(-' + (selected * 100) + '%)'">
+        <div class="flex-shrink-0 " 
+             [style.width]="'calc((100% - ' + (visibleCards - 1) * 150 + 'px) / ' + visibleCards + ')'"
+          
+             *ngFor="let slide of slides; let i = index">
+          <div class="flex w-full h-full flex-col gap-3 rounded-md p-5 shadow-sm bg-custom-beige-100 border border-gray-200" >
+            <div class="flex w-full flex-row justify-between gap-1">
+              <div>
+                <span class="text-xl font-semibold cursor-pointer hover:underline"  [routerLink]="slide.path">
+                  {{ slide.title }}
+                </span>
+                <ul *ngIf="slide.desc" class="mt-2 list-disc list-inside">
+          <li *ngFor="let key of objectKeys(slide.desc)">
+            {{ slide.desc[key] }}
+          </li>
+        </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="z-20 flex items-center justify-center gap-x-4 p-4  rounded-b-md">
+    <button (click)="$event.preventDefault(); goToSlide(selected - 1)" 
+            class="scale-75" 
+            mat-icon-button
+            [disabled]="selected === 0">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    
+    <div class="flex flex-row flex-wrap gap-0.5">
+      <a class="h-2 w-2 cursor-pointer rounded-full transition-all ease-in-out hover:opacity-100"
+         *ngFor="let page of [].constructor(totalPages); let i = index" 
+         (click)="$event.preventDefault(); goToSlide(i)"
+         [ngClass]="{
+           'bg-accent-800 opacity-100': selected === i,
+           'bg-accent-400 opacity-60': selected !== i
+         }">
+      </a>
+    </div>
+    
+    <button (click)="$event.preventDefault(); goToSlide(selected + 1)" 
+            class="scale-75" 
+            mat-icon-button
+            [disabled]="selected === totalPages - 1">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+</div>
+} @else {
+<p>{{ message }}</p>
+}

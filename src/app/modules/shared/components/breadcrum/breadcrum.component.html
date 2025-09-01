@@ -6,11 +6,12 @@
   <!-- Dynamic parts -->
   <ng-container *ngFor="let part of breadcrumbParts; let last = last; let i = index">
     <span 
-      class="capitalize text-lg cursor-pointer hover:text-teal-500"
-      [routerLink]="getLink(i)"
+      class="capitalize text-lg  "
+    
     >
       {{ part }}
     </span>
     <mat-icon *ngIf="!last" class="mt-1 mr-2">arrow_right_alt</mat-icon>
   </ng-container>
 </div>
+<!--   [routerLink]="getLink(i)" cursor-pointer hover:text-teal-500-->

@@ -15,6 +15,10 @@ import { CardListComponent } from './components/card-list/card-list.component';
 import { SectionIntroComponent } from './components/section-intro/section-intro.component';
 import { RequestDemoComponent } from './components/request-demo/request-demo.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -26,6 +30,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     CardListComponent,
     SectionIntroComponent,
     RequestDemoComponent,
+    CarouselComponent,
   ],
   imports: [
     CommonModule,
@@ -36,6 +41,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatCardModule,
     PulseRoutingModule,
     MatDialogModule,
+    CarouselModule,
   ],
   exports: [
     HeaderComponent,
@@ -45,12 +51,15 @@ import { MatDialogModule } from '@angular/material/dialog';
     FooterComponent,
     SectionHeaderComponent,
     BreadcrumComponent,
+    CarouselComponent,
     MatIconModule,
     MatDialogModule,
     MatButtonModule,
     MatToolbarModule,
     MatExpansionModule,
     MatCardModule,
+
+    CarouselModule,
   ],
 })
 export class SharedModule {}
