@@ -152,15 +152,15 @@ export class HeaderComponent {
       ],
       expanded: false,
     },
-    {
+    /* {
       title: 'For our clients',
       children: [
         { label: 'Help Center', path: 'client/help' },
         { label: 'Professional service', path: 'client/professional-service' },
-        /* { label: 'Contact', path: 'c3' }, */
+       
       ],
       expanded: false,
-    },
+    }, */
   ];
   getSolutions(item: any) {
     return item.children.solution || [];
