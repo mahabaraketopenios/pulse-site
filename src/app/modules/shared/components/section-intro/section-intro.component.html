@@ -22,7 +22,7 @@
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         <div class="absolute w-100 h-100 max-sm: bg-cyan-700 rounded-3xl transform rotate-30 top-6 "></div>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <img src="images/AP-Hero-Image-2048x1240.png" class="relative w-140 h-100 z-99" alt="">
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </div> -->
-    <div
+    <div *ngIf="section=='solution'"
         class="relative w-full max-w-140  aspect-[16/10] max-sm:aspect-[4/3] flex justify-center items-center max-sm:mt-5 max-md:w-120">
         <!-- Background shape -->
         <div
@@ -30,5 +30,25 @@
         </div>
         <!-- Image in front -->
         <img [src]="image_path" class="relative  object-contain z-10" alt="Hero Image">
+    </div>
+    <div *ngIf="section=='serve'"
+        class="relative w-full max-w-140  justify-center items-center flex  max-sm:mt-5 max-md:w-120 mr-5">
+        <!-- Background shape -->
+    
+        <img [src]="image_path" class="relative rounded-xl justify-center items-center object-contain z-10"
+            alt="Hero Image">
+        <!--  <img [src]="image_path" class=" absolute rounded-tr-[500px] rounded-tl-[500px]  object-contain z-10 top-2 right-50"
+                                                                            alt="Hero Image"> -->
+    </div>
+    
+    
+    <div *ngIf="section=='contact'"
+        class="relative w-full max-w-140   flex justify-center items-center max-sm:mt-5 max-md:w-120 mr-5">
+        <!-- Background shape -->
+    
+    
+        <img [src]="image_path" class="relative rounded-xl  object-contain z-10" alt="Hero Image">
+        <!--  <img [src]="image_path" class=" absolute rounded-tr-[500px] rounded-tl-[500px]  object-contain z-10 top-2 right-50"
+                                                                            alt="Hero Image"> -->
     </div>
 </div>

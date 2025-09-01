@@ -12,7 +12,7 @@ export class SectionIntroComponent {
   @Input() image_path: String = '';
   @Input() title: String = '';
   @Input() subtitle: String = '';
-
+  @Input() section: String = '';
   click() {
     this.dialog.open(RequestDemoComponent, {
       width: '90%', // adjust size

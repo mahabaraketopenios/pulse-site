@@ -1,2 +1,115 @@
 <app-header></app-header>
+<app-section-header [title]="'Contact us'"></app-section-header>
+
+
+<app-section-intro [title]="'Contact PulseOne'" [section]="'contact'" [image_path]="'images/contatc.webp'"
+    subtitle=" Whether you’re a current customer or simply looking for more information about our solutions, we’re here to help.">
+
+</app-section-intro>
+
+<div class="min-h-screen flex items-center justify-center p-4">
+    <div class="rounded-xl p-8 w-full max-w-6xl flex flex-col lg:flex-row gap-8">
+
+        <!-- Left Column: Contact Form -->
+        <div class="flex-1 bg-custom-mint-100 rounded-xl p-6 shadow-lg">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Contact Us</h2>
+
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="space-y-4">
+                <!-- Name -->
+                <div>
+                    <label for="name" class="block text-gray-700 font-medium mb-1">Name</label>
+                    <input type="text" id="name" formControlName="name" placeholder="Your Name"
+                        class="bg-custom-mint-100 w-full border border-teal-500 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-600" />
+                    <div *ngIf="submitted && contactForm.get('name')?.errors" class="text-red-500 text-sm mt-1">
+                        <div *ngIf="contactForm.get('name')?.errors?.['required']">Name is required.</div>
+                        <div *ngIf="contactForm.get('name')?.errors?.['minlength']">Name must be at least 2 characters.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div>
+                    <label for="email" class="block text-gray-700 font-medium mb-1">Email</label>
+                    <input type="email" id="email" formControlName="email" placeholder="you@example.com"
+                        class="bg-custom-mint-100 w-full border border-teal-500 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-600" />
+                    <div *ngIf="submitted && contactForm.get('email')?.errors" class="text-red-500 text-sm mt-1">
+                        <div *ngIf="contactForm.get('email')?.errors?.['required']">Email is required.</div>
+                        <div *ngIf="contactForm.get('email')?.errors?.['email']">Invalid email format.</div>
+                    </div>
+                </div>
+
+                <!-- Subject -->
+                <div>
+                    <label for="subject" class="block text-gray-700 font-medium mb-1">Subject</label>
+                    <input type="text" id="subject" formControlName="subject" placeholder="Subject"
+                        class="bg-custom-mint-100 w-full border border-teal-500 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-600" />
+                    <div *ngIf="submitted && contactForm.get('subject')?.errors" class="text-red-500 text-sm mt-1">
+                        Subject is required.
+                    </div>
+                </div>
+
+                <!-- Message -->
+                <div>
+                    <label for="message" class="block text-gray-700 font-medium mb-1">Message</label>
+                    <textarea id="message" formControlName="message" rows="5" placeholder="Your message..."
+                        class="bg-custom-mint-100 w-full border border-teal-500 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-400"></textarea>
+
+                    <div *ngIf="submitted && contactForm.get('message')?.errors" class="text-red-500 text-sm mt-1">
+                        <div *ngIf="contactForm.get('message')?.errors?.['required']">Message is required.</div>
+                        <div *ngIf="contactForm.get('message')?.errors?.['minlength']">Message must be at least 2
+                            characters.</div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button type="submit"
+                        class="bg-teal-500 text-white px-6 py-2 rounded-md transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                        [disabled]="loading">
+                        <ng-container *ngIf="!loading; else loadingTpl">Send</ng-container>
+                    </button>
+                </div>
+
+                <ng-template #loadingTpl>
+                    <span class="flex items-center justify-center gap-2">
+                        <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+                            </circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                        </svg>
+                        Sending...
+                    </span>
+                </ng-template>
+
+                <!-- Success Message -->
+                <div *ngIf="alertMessage"
+                    class="fixed top-5 right-5 max-w-sm p-4 rounded-lg shadow-lg transition-all duration-500" [ngClass]="{
+    'bg-teal-400 text-white': alertType === 'success',
+    'bg-red-500 text-white': alertType === 'error'
+  }">
+                    {{ alertMessage }}
+                    <button class="ml-2 font-bold" (click)="closeAlert()">✖</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Right Column: Text + Demo Button -->
+        <div
+            class="flex-1 bg-white rounded-xl p-6 shadow-lg flex flex-col justify-center text-center lg:text-left gap-4">
+            <h3 class="text-xl font-semibold text-gray-800">Request a Demo</h3>
+            <p class="text-gray-700">
+                Interested in seeing PulseOne in action? Schedule a personalized demo with our team and discover how our
+                solutions can help your organization succeed.
+            </p>
+            <div class="p-3 w-40 bg-teal-400 flex flex-row gap-2 rounded-tr-xl rounded-bl-xl cursor-pointer mt-4"
+                (click)="click()">
+                <span class="text-md font-semibold ml-2">Book A Meeting</span>
+                <mat-icon class="text-3xl ml-auto">arrow_forward</mat-icon>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 <app-footer></app-footer>

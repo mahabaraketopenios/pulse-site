@@ -19,6 +19,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { BrowserModule } from '@angular/platform-browser';
     PulseRoutingModule,
     MatDialogModule,
     CarouselModule,
+    ReactiveFormsModule,
   ],
   exports: [
     HeaderComponent,
@@ -58,7 +60,7 @@ import { BrowserModule } from '@angular/platform-browser';
     MatToolbarModule,
     MatExpansionModule,
     MatCardModule,
-
+    ReactiveFormsModule,
     CarouselModule,
   ],
 })

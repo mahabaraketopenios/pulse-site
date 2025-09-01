@@ -126,6 +126,7 @@ const config = {
           300: "#EADFCB",
         },
         "custom-mint": {
+          50: "#CFF7EF",
           100: "#CFF7EF",
           200: "#7AE2CF", // original
           300: "#4ACAB2",
