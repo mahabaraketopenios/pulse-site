@@ -16,7 +16,11 @@ export class AppComponent {
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
-      AOS.init();
+    
+       AOS.init({
+         once: true, // Run only once
+         startEvent: 'load', // Trigger when page is fully loaded
+       });
     }
   }
 }
