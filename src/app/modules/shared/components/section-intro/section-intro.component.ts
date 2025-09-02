@@ -10,6 +10,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class SectionIntroComponent {
   constructor(private dialog: MatDialog) {}
   @Input() image_path: String = '';
+  @Input() image_path1: String = '';
   @Input() title: String = '';
   @Input() subtitle: String = '';
   @Input() section: String = '';
