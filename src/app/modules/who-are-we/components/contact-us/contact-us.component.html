@@ -84,14 +84,7 @@
                 </ng-template>
 
                 <!-- Success Message -->
-                <div *ngIf="alertMessage"
-                    class="fixed top-5 right-5 max-w-sm p-4 rounded-lg shadow-lg transition-all duration-500" [ngClass]="{
-    'bg-teal-400 text-white': alertType === 'success',
-    'bg-red-500 text-white': alertType === 'error'
-  }">
-                    {{ alertMessage }}
-                    <button class="ml-2 font-bold" (click)="closeAlert()">✖</button>
-                </div>
+            
             </form>
         </div>
 
@@ -114,3 +107,11 @@
 </div>
 
 <app-footer></app-footer>
+<div *ngIf="alertMessage" class="fixed top-5 right-5 max-w-sm p-4 rounded-lg shadow-lg transition-all duration-500"
+    [ngClass]="{
+    'bg-green-300 text-white': alertType === 'success',
+    'bg-red-300 text-white': alertType === 'error'
+  }">
+    {{ alertMessage }}
+    <button class="ml-2 font-bold" (click)="closeAlert()">✖</button>
+</div>

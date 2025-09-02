@@ -60,24 +60,24 @@ export class FooterComponent {
       items: [
         {
           label: 'About Pulse One',
-          path: 'About Pulse One',
+          path: '',
         },
         {
           label: 'Legal Resources',
-          path: 'Legal Resources',
+          path: '',
         },
-        { label: 'Join Our Team', path: 'Join Our Team' },
-        { label: 'Events', path: 'Events' },
-        { label: 'Press', path: 'Press' },
-        { label: 'Resources', path: 'Resources' },
-        { label: 'AWS Hosting', path: 'AWS Hosting' },
+        { label: 'Join Our Team', path: '' },
+        { label: 'Events', path: '' },
+        { label: 'Press', path: '' },
+        { label: 'Resources', path: '' },
+        { label: 'AWS Hosting', path: '' },
       ],
     },
     {
       title: 'Connect',
       items: [
-        { label: 'Sign In', path: 'Sign In' },
-        { label: 'Get Support', path: 'Get Support' },
+        { label: 'Sign In', path: '' },
+        { label: 'Get Support', path: '' },
         { label: 'Contact Us', path: '/who-are-we/contact-us' },
         {
           label: 'Request Demo',
@@ -91,8 +91,10 @@ export class FooterComponent {
   constructor(private dialog: MatDialog, private router: Router) {}
   onClick(label: string) {
     console.log('Clicked:', label);
+    if (label) {
+      this.router.navigate([`${label}`]);
+    }
     // Add routing, modal, or any action here
-  this.router.navigate([`${label}`]);
   }
   click() {
     this.dialog.open(RequestDemoComponent, {
