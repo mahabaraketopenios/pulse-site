@@ -37,12 +37,12 @@ export class HeaderComponent {
       children: {
         solution: [
           {
-            label: 'Assessment and improvment Projects',
+            label: 'Assessment and improvement Projects',
             path: 'assessment-projects',
             iSsolution: true,
           },
           {
-            label: 'Course Evaluation and improvment',
+            label: 'Course Evaluation and improvement',
             path: 'course-evaluation',
             iSsolution: true,
           },
