@@ -17,13 +17,13 @@ export class FacultyPerformanceComponent {
 
     'All faculty activity in one single place',
     'Cv tech and ?? on your website',
-    'Automates ?? faculty activities Reporting',
+    'Automates formated? faculty activities Reporting',
     'Boost faculty research work and ?? through time optimization and clean visibility ??',
   ];
   mesured2: String[] = [
     'share achivements with cvs and public web profiles',
     'efficiently report faculty crendials for accreditation pa??',
-    'Track faculty career growth and ?? insight accress institution',
+    'Track faculty career growth and ?? insight accross institution',
     'confirm faculty credentilas ',
     'support faculty performance review and advancement',
   ];

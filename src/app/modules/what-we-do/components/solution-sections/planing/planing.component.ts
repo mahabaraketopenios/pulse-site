@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class PlaningComponent {
   mesured: string[] = [
+    'steamlined multi-level outcomes planning and assessmnets',
     'Boost ?? stakeholders engagement in assessment',
 
     'empower documented and traceable program improvement',
@@ -18,7 +19,7 @@ export class PlaningComponent {
     'steamlined accreditation reporting',
     'efficient program review cycles',
     'simplified collaborative program review',
-    'Integrated alum?? and labor market data',
+    'Integrated alumni ?? and labor market data',
     'centralized insight for leaders',
   ];
   insightsList = [

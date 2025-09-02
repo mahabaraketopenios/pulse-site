@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AssessmentComponent {
   mesured: string[] = [
-    '??',
+    'Get on-time insights in student outcomes achievements.',
     'faster reliability and assessment accuracy.',
 
     'keep focus on progress with accurate analysis.',
@@ -33,8 +33,8 @@ export class AssessmentComponent {
       title: 'Drive consistency with relevant mappings.',
       icon: 'images/icons/presentation.svg',
       text: {
-        1: 'Use built-in mappings or add your own ',
-        2: 'Reliable and measurable KPIs for ?? ',
+        1: 'Use built-in mappings or add your own.',
+        2: 'Reliable and measurable KPIs to avoid subjectivity.',
         3: 'Coach evaluation on score and ?? ',
         4: 'Build in a recommended actions guide for effective progress.',
       },

@@ -30,7 +30,7 @@
 
     <div class="hidden md:flex items-center space-x-6 z-999" #menuContainer>
       <div *ngFor="let item of menuItems" class="relative group">
-        <button class="flex w-full items-center text-gray-700 hover:text-black hover:font-semibold"
+        <button class="flex w-full items-center  hover:text-black hover:font-semibold"
           (click)="toggleItem(item, menuItems)">
           <span class="text-lg">{{ item.title }}</span>
           <mat-icon class="ml-auto">keyboard_arrow_down</mat-icon>
@@ -39,7 +39,7 @@
         <div class="absolute z-50  bg-white shadow-lg rounded-md mt-1 p-3" *ngIf="item.expanded">
           <div *ngIf="item.title !== 'What we do'" class=" w-[300px]">
             <a *ngFor="let subItem of getchildren(item)" (click)="clicked(subItem)"
-              class="text-lg block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:font-semibold hover:text-black  menu-item">
+              class="text-lg block px-4 py-2 cursor-pointer hover:bg-teal-100 hover:font-semibold hover:text-black  menu-item">
               {{ subItem.label }}
             </a>
             </div>

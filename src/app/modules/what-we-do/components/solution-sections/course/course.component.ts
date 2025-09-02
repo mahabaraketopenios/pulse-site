@@ -13,9 +13,9 @@ export class CourseComponent {
 
     'sychnonize results distribution  and analyse ?? over time ',
 
-    '?? student learnings and surveys evaluation process',
+    'steamlined student learnings and surveys evaluation process',
 
-    ' rich reporting to ? and record ?? and achivements without intensive timming',
+    'rich reporting to synthesize and record ?? and achivements without intensive timming',
   ];
 
   insightsList = [

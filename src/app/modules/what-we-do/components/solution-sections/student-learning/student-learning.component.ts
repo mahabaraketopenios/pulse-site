@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class StudentLearningComponent {
   mesured: String[] = [
-    'realtime student performance insights ',
-    'boost student retentions',
-    'through pr?? support ',
+    /*     'realtime student performance insights ',
+     */ 'boost student retentions through pr?? support ',
+
     'going beyond graduation rate to drive profesional sucess',
     'support student attributes progress toward stati?? achivements ',
   ];
@@ -20,7 +20,7 @@ export class StudentLearningComponent {
     'confident Connectivity ',
     'student lifecyle support from anywhere ',
     'move student through a workflow',
-    /*     'personalized student support ', */
+    'personalized student support ',
   ];
   insightsList = [
     {

@@ -144,7 +144,7 @@ const config = {
       },
       backgroundImage: {
         "gradient-mint": "linear-gradient(135deg, #CFF7EF 50%, #4ACAB2 100%)",
-        "gradient-teal": "linear-gradient(135deg, #66C8C9 0%, #045D5E 100%)",
+        "gradient-teal": "linear-gradient(135deg, #66C8C9 30%, #045D5E 100%)",
         "gradient-beige": "linear-gradient(135deg, #FDF9F4 0%, #EADFCB 100%)",
         "gradient-navy": "linear-gradient(135deg, #1B3946 50%, #06202B 100%)",
       },

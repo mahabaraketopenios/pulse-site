@@ -12,8 +12,8 @@ export class StudentExperienceComponent {
     'coordinate student Professional performance',
     'manage portfolios to showcase entire student Learning Journey',
     'dashboard student progress',
-    'date reporting and ?? showcase ',
-    'track progrress and compute ?? for accreditation using integrated automated ???????',
+    'data reporting and trend showcase ',
+    'track progrress and compute evidence for accreditation using integrated automated ???????',
   ];
   insightsList = [
     {

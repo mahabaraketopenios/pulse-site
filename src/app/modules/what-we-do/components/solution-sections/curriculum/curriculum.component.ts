@@ -9,13 +9,13 @@ export class CurriculumComponent {
   mesured: string[] = [
     'evaluate curriculum strength',
 
-    'identify improvement ?',
+    'identify improvement nests?',
 
     'bring graduate to the ?? market expectations',
 
     'document your ?? and improvements for brighter future ',
 
-    'drive your fowards leading your education ??',
+    'drive your fowards leading your education domain?',
   ];
 
   curriculumInsights = [
