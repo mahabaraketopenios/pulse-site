@@ -9,8 +9,8 @@ export class AccreditationUseComponent {
   mesured: String[] = [
     'Stress-free accreditation preparation',
     'Always ready to demonstrate your progress',
-    'achieve data read??',
-    'engage entire institution in continuois ev??',
+    'achieve data readiness',
+    'Involving the entire institution in continuous development',
     'efficiently produce accurate and centralized evidence',
     'optimize student learning',
     'traceable improvement and versioning',
