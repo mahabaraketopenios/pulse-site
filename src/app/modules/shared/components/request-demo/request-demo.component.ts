@@ -20,7 +20,7 @@ export class RequestDemoComponent implements AfterViewInit{
 
   ngAfterViewInit() {
     window.Calendly.initInlineWidget({
-  url: 'https://calendly.com/pulse-one/30min?primary_color=077A7D&text_color=06202B&background_color=ffff',
+      url: 'https://calendly.com/pulseone-edgeone/30min?primary_color=077A7D&text_color=06202B&background_color=ffff',
       parentElement: document.querySelector('.calendly-inline-widget'),
       prefill: {},
       onEventScheduled: () => {

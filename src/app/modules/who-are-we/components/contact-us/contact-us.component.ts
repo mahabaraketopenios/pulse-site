@@ -37,13 +37,13 @@ export class ContactUsComponent {
 
     this.loading = true;
     const { name, email, subject, message } = this.contactForm.value;
-
+    console.log(name, email, subject, message);
     emailjs
       .send(
-        'service_f5mhb28',
-        'template_hd1ea6r',
+        'service_nk582ce',
+        'template_juwpg9o',
         { name, email, subject, message },
-        'qDu8xUFjWa0wSg3fN'
+        'u2XjSsEFIf3-Hf-5e'
       )
       .then(
         () => {
