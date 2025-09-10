@@ -73,7 +73,7 @@ export class AssessmentComponent {
       icon: 'images/icons/support.svg',
       text: {
         1: 'Qualified team to  ?? you to success.',
-        2: 'Power consulting and methodologies get you ready and let you focus on your goal.',
+        2: 'Proven consultancy and methodologies prepare you and enable you to focus on your target.',
         3: 'accompany you to provide a seamless experience from start to the next cycle',
       },
     },
