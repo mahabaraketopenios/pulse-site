@@ -18,7 +18,7 @@ export class DeansComponent {
   mesured2: String[] = [
     'ceate a ?? between complex and wide spectrum assessment systems to transform colleges lifecycles for the best',
     'Promote the development of cutting edge programs and courses',
-    'demonstrate coompliance with accredition and ?? market requirements ',
+    'demonstrate coompliance with accredition and labour market requirements ',
     'ensure the ?? of college growth regardless good reputations and alumini success stories',
     'create a boosting ans suportive environemtn for faculty and student success',
   ];

@@ -19,7 +19,7 @@ export class PlaningComponent {
     'steamlined accreditation reporting',
     'efficient program review cycles',
     'simplified collaborative program review',
-    'Integrated alumni ?? and labor market data',
+    'Integrated alumni ?? and labour market data',
     'centralized insight for leaders',
   ];
   insightsList = [

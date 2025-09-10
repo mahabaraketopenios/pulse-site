@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 export class ProvostComponent {
   mesured: String[] = [
     'real times Dashboard to monitor process',
-    'no more fragmented data that ?? ??? insights',
+    'No more fragmented data with restricted insights',
     'capture a complete picture of your institution',
-    'single source of ?? where all collaborative share the same accurate and reliable uptodate data',
-    'centralized access and activity with  ?? authenticated source on information',
+    'single source of ?? where all collaborative share the same accurate and reliable up to date data',
+    'Centralized access and activity with a unique and reliable source of information',
     'steamlines reporting and lighter path to success ',
   ];
 }

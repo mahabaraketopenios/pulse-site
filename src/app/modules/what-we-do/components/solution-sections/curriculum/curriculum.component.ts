@@ -11,7 +11,7 @@ export class CurriculumComponent {
 
     'identify improvement nests?',
 
-    'bring graduate to the ?? market expectations',
+    'bring graduate to the labour market expectations',
 
     'document your ?? and improvements for brighter future ',
 

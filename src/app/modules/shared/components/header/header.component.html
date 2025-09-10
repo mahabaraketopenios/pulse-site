@@ -35,7 +35,7 @@
           <mat-icon class="ml-auto">keyboard_arrow_down</mat-icon>
         </button>
 
-        <div class="absolute z-50  bg-white shadow-lg rounded-md mt-1 p-3" *ngIf="item.expanded">
+        <div class="absolute z-50  bg-white shadow-lg rounded-xl mt-1 p-3" *ngIf="item.expanded">
           <div *ngIf="item.title !== 'What we do'" class=" w-[300px] ">
             <a *ngFor="let subItem of getchildren(item)" (click)="clicked(subItem)"
               class="text-lg block px-4 py-2 cursor-pointer hover:bg-teal-100 hover:font-semibold hover:text-black  menu-item">
@@ -44,13 +44,14 @@
             </div>
           <div *ngIf="item.title === 'What we do'" class="flex flex-row gap-2 w-[600px]">
           
-            <div class="flex flex-col gap-4 text-lg w-full bg-custom-beige-100 rounded">
+            <div class="flex flex-col gap-4 text-lg w-full bg-custom-beige-100 rounded-xl">
               <h4 class="font-semibold text-gray-800 my-2 text-center">Solutions</h4>
-              <div *ngFor="let subItem of getSolutions(item)" class="flex items-center gap-3 cursor-pointer w-full hover-effect"
-                (click)="clicked(subItem)">
-                <!-- <div class="flex-shrink-0 flex items-center justify-center w-8 h-8 bg-teal-300 rounded-full">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <mat-icon class="text-sm m-0 p-0">add</mat-icon>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                </div> -->
+              <div *ngFor="let subItem of getSolutions(item);let i=index ; let isLast = last"
+                class="flex items-center gap-3 cursor-pointer w-full hover-effect" (click)="clicked(subItem)"
+                [ngClass]="{ 'mb-3': isLast }">
+                <div class="flex-shrink-0 flex items-center justify-center w-10 h-10 bg-teal-100 ml-1 rounded-full">
+                  <img class="block" [src]="'images/icons/' + (i+1) + '.svg'" alt="">
+                </div>
                 <span
                   class="menu-item cursor-pointer text-lg px-2 py-1 rounded hover:bg-teal-100 hover:text-black hover:font-semibold w-full">
                   {{ subItem.label }}
@@ -58,13 +59,14 @@
               </div>
               </div>
 
-          <div class="flex flex-col gap-4 text-lg w-full bg-custom-beige-100 rouned">
+          <div class="flex flex-col gap-4 text-lg w-full bg-custom-beige-100 rounded-xl">
             <h4 class="font-semibold text-gray-800 my-2 text-center">Use Cases</h4>
-            <div *ngFor="let subItem of getUseCases(item)" class="flex items-center gap-3 cursor-pointer w-full hover-effect"
+            <div *ngFor="let subItem of getUseCases(item);let i=index"
+              class="flex items-center gap-3 cursor-pointer w-full hover-effect"
               (click)="clicked(subItem)">
-              <!--   <div class="flex-shrink-0 flex items-center justify-center w-8 h-8 bg-teal-300 rounded-full">
-                                                                                                                                                                                                                                                                                                                                                                                  <mat-icon class="text-sm">add</mat-icon>
-                                                                                                                                                                                                                                                                                                                                                                                </div> -->
+              <div class="flex-shrink-0 flex items-center justify-center w-10 h-10 bg-teal-100 ml-1 rounded-full">
+                <img [src]="'images/icons/2' + (i+1) + '.svg'" alt="">
+              </div>
               <span
                 class="menu-item text-lg px-2 py-1 cursor-pointer rounded hover:bg-teal-100 hover:text-black hover:font-semibold w-full">
                   {{ subItem.label }}
@@ -108,9 +110,12 @@
         <ng-container *ngIf="item.title === 'What we do'">
           <div class="py-2">
             <h4 class="font-semibold text-gray-800 mb-1">Solutions</h4>
-            <div *ngFor="let subItem of getSolutions(item)" (click)="clicked(subItem)"
+          <div *ngFor="let subItem of getSolutions(item); let i=index;" (click)="clicked(subItem)"
               class="block p-3 hover:bg-teal-100  hover:text-black menu-item cursor-pointer">
+              <div>
+                <img [src]="'images/icons/{{i}}.svg'" alt="">
               {{ subItem.label }}
+            </div>
             </div>
           </div>
           <div class="py-2" *ngIf="getSolutions(item).length > 0">
