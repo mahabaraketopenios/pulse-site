@@ -117,13 +117,14 @@
             <h2 class="faq-title text-xl sm:text-2xl font-bold mb-4">Four Coorperative layers</h2>
             <div class="faq-container">
               <div class="faq-item" *ngFor="let faq of faqs; let i = index" [class.active]="faq.open">
-                <button class="faq-question flex justify-between w-full text-left border-b py-2" (click)="toggleFaq(i)">
+                <button class="faq-question flex justify-between w-full text-left border-b border-teal-50 py-2" (click)="toggleFaq(i)">
                   {{ faq.question }}
                   <mat-icon class="transform transition-transform duration-300" [ngClass]="faq.open ? 'rotate-180' : 'rotate-0'">
                     expand_more
                   </mat-icon>
                 </button>
-                <div class="faq-answer" *ngIf="faq.open">
+                <div class="faq-answer" class="overflow-hidden transition-all duration-500 ease-in-out"
+                  [ngClass]="faq.open ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'">
                   <p class="p-2">{{ faq.answer }}</p>
                 </div>
               </div>
