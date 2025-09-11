@@ -42,9 +42,9 @@
               {{ subItem.label }}
             </a>
             </div>
-          <div *ngIf="item.title === 'What we do'" class="flex flex-row gap-2 w-[600px]">
+          <div *ngIf="item.title === 'What we do'" class="flex flex-row gap-2 w-[700px]">
           
-            <div class="flex flex-col gap-4 text-lg w-full bg-custom-beige-100 rounded-xl">
+            <div class="flex flex-col gap-4 text-lg w-2/3 bg-custom-beige-100 rounded-xl">
               <h4 class="font-semibold text-gray-800 my-2 text-center">Solutions</h4>
               <div *ngFor="let subItem of getSolutions(item);let i=index ; let isLast = last"
                 class="flex items-center gap-3 cursor-pointer w-full hover-effect" (click)="clicked(subItem)"
@@ -59,7 +59,7 @@
               </div>
               </div>
 
-          <div class="flex flex-col gap-4 text-lg w-full bg-custom-beige-100 rounded-xl">
+          <div class="flex flex-col gap-4 text-lg w-1/3 bg-custom-beige-100 rounded-xl">
             <h4 class="font-semibold text-gray-800 my-2 text-center">Use Cases</h4>
             <div *ngFor="let subItem of getUseCases(item);let i=index"
               class="flex items-center gap-3 cursor-pointer w-full hover-effect"
